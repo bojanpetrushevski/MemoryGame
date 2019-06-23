@@ -50,8 +50,8 @@ namespace MemoryGame
 
         private void lbNo_Click(object sender, EventArgs e)
         {
-            this.Close();
-            MainMenu.ShowDialog();
+            this.Dispose();
+            MainMenu.Show();
         }
     }
 }
