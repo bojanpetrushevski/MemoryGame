@@ -54,11 +54,12 @@ namespace MemoryGame
             this.lbPlay.BackColor = System.Drawing.Color.Transparent;
             this.lbPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.8F);
             this.lbPlay.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbPlay.Location = new System.Drawing.Point(325, 110);
+            this.lbPlay.Location = new System.Drawing.Point(325, 115);
             this.lbPlay.Name = "lbPlay";
             this.lbPlay.Size = new System.Drawing.Size(78, 37);
             this.lbPlay.TabIndex = 0;
             this.lbPlay.Text = "Play";
+            this.lbPlay.Click += new System.EventHandler(this.lbPlay_Click);
             this.lbPlay.MouseEnter += new System.EventHandler(this.lbPlay_MouseEnter);
             this.lbPlay.MouseLeave += new System.EventHandler(this.lbPlay_MouseLeave);
             // 
@@ -110,7 +111,7 @@ namespace MemoryGame
             this.gbChooseGameMode.Controls.Add(this.rbMultiPlayer);
             this.gbChooseGameMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.8F);
             this.gbChooseGameMode.ForeColor = System.Drawing.Color.White;
-            this.gbChooseGameMode.Location = new System.Drawing.Point(87, 170);
+            this.gbChooseGameMode.Location = new System.Drawing.Point(82, 170);
             this.gbChooseGameMode.Name = "gbChooseGameMode";
             this.gbChooseGameMode.Size = new System.Drawing.Size(560, 91);
             this.gbChooseGameMode.TabIndex = 7;
@@ -125,9 +126,9 @@ namespace MemoryGame
             this.gbChooseGameCategory.Controls.Add(this.rb4x5);
             this.gbChooseGameCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.8F);
             this.gbChooseGameCategory.ForeColor = System.Drawing.Color.White;
-            this.gbChooseGameCategory.Location = new System.Drawing.Point(110, 286);
+            this.gbChooseGameCategory.Location = new System.Drawing.Point(104, 288);
             this.gbChooseGameCategory.Name = "gbChooseGameCategory";
-            this.gbChooseGameCategory.Size = new System.Drawing.Size(522, 91);
+            this.gbChooseGameCategory.Size = new System.Drawing.Size(520, 96);
             this.gbChooseGameCategory.TabIndex = 8;
             this.gbChooseGameCategory.TabStop = false;
             this.gbChooseGameCategory.Text = "Choose game category";
@@ -137,9 +138,9 @@ namespace MemoryGame
             this.rb4x6.AutoSize = true;
             this.rb4x6.Location = new System.Drawing.Point(389, 42);
             this.rb4x6.Name = "rb4x6";
-            this.rb4x6.Size = new System.Drawing.Size(89, 41);
+            this.rb4x6.Size = new System.Drawing.Size(107, 41);
             this.rb4x6.TabIndex = 6;
-            this.rb4x6.Text = "4x6";
+            this.rb4x6.Text = "4 x 6";
             this.rb4x6.UseVisualStyleBackColor = true;
             this.rb4x6.MouseEnter += new System.EventHandler(this.rb4x6_MouseEnter);
             this.rb4x6.MouseLeave += new System.EventHandler(this.rb4x6_MouseLeave);
@@ -150,10 +151,10 @@ namespace MemoryGame
             this.rb4x4.Checked = true;
             this.rb4x4.Location = new System.Drawing.Point(49, 42);
             this.rb4x4.Name = "rb4x4";
-            this.rb4x4.Size = new System.Drawing.Size(89, 41);
+            this.rb4x4.Size = new System.Drawing.Size(107, 41);
             this.rb4x4.TabIndex = 4;
             this.rb4x4.TabStop = true;
-            this.rb4x4.Text = "4x4";
+            this.rb4x4.Text = "4 x 4";
             this.rb4x4.UseVisualStyleBackColor = true;
             this.rb4x4.MouseEnter += new System.EventHandler(this.rb4x4_MouseEnter);
             this.rb4x4.MouseLeave += new System.EventHandler(this.rb4x4_MouseLeave);
@@ -163,9 +164,9 @@ namespace MemoryGame
             this.rb4x5.AutoSize = true;
             this.rb4x5.Location = new System.Drawing.Point(210, 42);
             this.rb4x5.Name = "rb4x5";
-            this.rb4x5.Size = new System.Drawing.Size(89, 41);
+            this.rb4x5.Size = new System.Drawing.Size(107, 41);
             this.rb4x5.TabIndex = 5;
-            this.rb4x5.Text = "4x5";
+            this.rb4x5.Text = "4 x 5";
             this.rb4x5.UseVisualStyleBackColor = true;
             this.rb4x5.MouseEnter += new System.EventHandler(this.rb4x5_MouseEnter);
             this.rb4x5.MouseLeave += new System.EventHandler(this.rb4x5_MouseLeave);
@@ -218,11 +219,11 @@ namespace MemoryGame
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 29.8F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.8F);
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(186, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(357, 58);
+            this.label1.Size = new System.Drawing.Size(367, 59);
             this.label1.TabIndex = 12;
             this.label1.Text = "Memory Game";
             // 

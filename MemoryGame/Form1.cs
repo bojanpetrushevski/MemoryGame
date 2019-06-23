@@ -152,5 +152,44 @@ namespace MemoryGame
             this.Hide();
             Options.ShowDialog();
         }
+
+        private void lbPlay_Click(object sender, EventArgs e)
+        {
+            GameMode.PlayingMode selectedMode = GetSelectedMode();
+            GameCategory selectedCateogry = GetSelectedCategory();
+            bool sound = GetSound();
+            Color selectedColor = GetColor();
+            GameSettings gameSettings = new GameSettings(selectedMode, selectedCateogry, sound, selectedColor);
+        }
+        private GameMode.PlayingMode GetSelectedMode()
+        {
+            if (rbSinglePlayer.Checked)
+                return GameMode.PlayingMode.SinglePlayer;
+            else
+                return GameMode.PlayingMode.MultiPlayer;
+        }
+        private GameCategory GetSelectedCategory()
+        {
+            if (rb4x4.Checked)
+                return new GameCategory4x4();
+            else if (rb4x5.Checked)
+                return new GameCategory4x5();
+            else
+                return new GameCategory4x6();
+        }
+        private bool GetSound()
+        {
+            if (Options.ButtonText == "ON")
+                return true;
+            else
+                return false;
+        }
+        private Color GetColor()
+        {
+            if (Options.DropDownSelectedItem == "Blue")
+                return Color.Blue;
+            else
+                return Color.White;
+        }
     }
 }

@@ -7,8 +7,17 @@ using System.Threading.Tasks;
 
 namespace MemoryGame
 {
+    /// <summary>
+    /// Class used for comparing two bitmap images.
+    /// </summary>
     public class BitmapComparator
     {
+        /// <summary>
+        /// Compares two bitmap images pixel by pixel.
+        /// </summary>
+        /// <param name="bmp1">The first bitmap image</param>
+        /// <param name="bmp2">The secodn bitmap image</param>
+        /// <returns>Return true if equal, otherwise false.</returns>
         public static bool CompareBitmaps(Bitmap bmp1, Bitmap bmp2)
         {
             if (bmp1 == null || bmp2 == null)

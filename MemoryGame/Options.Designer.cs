@@ -103,7 +103,7 @@
             this.pbBackArrow.Image = ((System.Drawing.Image)(resources.GetObject("pbBackArrow.Image")));
             this.pbBackArrow.Location = new System.Drawing.Point(25, 12);
             this.pbBackArrow.Name = "pbBackArrow";
-            this.pbBackArrow.Size = new System.Drawing.Size(41, 35);
+            this.pbBackArrow.Size = new System.Drawing.Size(40, 35);
             this.pbBackArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbBackArrow.TabIndex = 6;
             this.pbBackArrow.TabStop = false;
