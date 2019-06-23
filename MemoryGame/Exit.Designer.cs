@@ -87,6 +87,7 @@
             this.Controls.Add(this.lbSureQuit);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "Exit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

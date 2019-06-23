@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace MemoryGame
 {
+    /// <summary>
+    /// Represents simple matching card.
+    /// </summary>
     public class Card
     {
         public Bitmap Image { set; get; }
@@ -26,6 +29,10 @@ namespace MemoryGame
             IsOpen = false;
             Paired = false;
         }
+        /// <summary>
+        /// Toggles the card.
+        /// If it is already paired (paired cards cannot be flipped), this method has no effect. 
+        /// </summary>
         public void Toggle()
         {
             if(!Paired)

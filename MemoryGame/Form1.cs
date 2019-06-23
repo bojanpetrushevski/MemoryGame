@@ -13,9 +13,11 @@ namespace MemoryGame
 {
     public partial class Form1 : Form
     {
+        public Options Options { set; get; }
         public Form1()
         {
             InitializeComponent();
+            Options = new Options(this);
         }
 
         private void lbPlay_MouseEnter(object sender, EventArgs e)
@@ -143,6 +145,12 @@ namespace MemoryGame
             this.Hide();
             Exit exitForm = new Exit(this);
             exitForm.ShowDialog();
+        }
+
+        private void lbOptions_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Options.ShowDialog();
         }
     }
 }

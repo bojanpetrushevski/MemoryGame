@@ -9,3 +9,4 @@ C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\obj\Debug\
 C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\obj\Debug\MemoryGame.exe
 C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\obj\Debug\MemoryGame.pdb
 C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\obj\Debug\MemoryGame.Exit.resources
+C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\obj\Debug\MemoryGame.Options.resources
