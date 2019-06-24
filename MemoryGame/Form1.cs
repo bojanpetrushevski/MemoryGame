@@ -171,11 +171,11 @@ namespace MemoryGame
         private GameCategory GetSelectedCategory()
         {
             if (rb4x4.Checked)
-                return new GameCategory4x4();
+                return new GameCategory(16, 4, 4, 150, 150);
             else if (rb4x5.Checked)
-                return new GameCategory4x5();
+                return new GameCategory(20, 4, 5, 140, 140);
             else
-                return new GameCategory4x6();
+                return new GameCategory(24, 4, 6, 130, 130);
         }
         private bool GetSound()
         {
