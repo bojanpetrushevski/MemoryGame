@@ -233,7 +233,7 @@ namespace MemoryGame
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(713, 626);
+            this.ClientSize = new System.Drawing.Size(708, 626);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbPlay);
             this.Controls.Add(this.lbExit);

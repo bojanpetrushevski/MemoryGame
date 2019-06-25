@@ -55,5 +55,11 @@ namespace MemoryGame
             Exit exitForm = new Exit(this);
             exitForm.ShowDialog();
         }
+
+        private void Scene_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Exit exitForm = new Exit(this);
+            exitForm.ShowDialog();
+        }
     }
 }

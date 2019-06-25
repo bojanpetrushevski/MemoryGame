@@ -118,6 +118,7 @@
             this.BackgroundImage = global::MemoryGame.Properties.Resources.mainmenu_wallpaper;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(636, 350);
+            this.ControlBox = false;
             this.Controls.Add(this.pbBackArrow);
             this.Controls.Add(this.btnOnOff);
             this.Controls.Add(this.comboBox1);
@@ -125,13 +126,12 @@
             this.Controls.Add(this.lbSound);
             this.Controls.Add(this.lbOptionsTitle);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Options";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Options";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Options_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pbBackArrow)).EndInit();
             this.ResumeLayout(false);

@@ -45,14 +45,13 @@ namespace MemoryGame
 
         private void lbYes_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Test");
+            this.Dispose();
+            Caller.Dispose();
             Application.Exit();
         }
 
         private void lbNo_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Tesdsdt");
-            Caller.Show();
             this.Dispose();
         }
     }
