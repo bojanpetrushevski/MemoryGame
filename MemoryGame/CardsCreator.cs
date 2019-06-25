@@ -38,7 +38,7 @@ namespace MemoryGame
             int row = position / Settings.SelectedCategory.Columns;
             ImageFrame.Width = Settings.SelectedCategory.CardWidth;
             ImageFrame.Height = Settings.SelectedCategory.CardHeight;
-            ImageFrame.Location = new Point(column * (Settings.SelectedCategory.CardWidth + GameSettings.CardDistance) + GameSettings.HorizontalOffset, row * (Settings.SelectedCategory.CardHeight + GameSettings.CardDistance) + GameSettings.HorizontalOffset);
+            ImageFrame.Location = new Point(column * (Settings.SelectedCategory.CardWidth + GameSettings.CardDistance) + GameSettings.HorizontalOffset, row * (Settings.SelectedCategory.CardHeight + GameSettings.CardDistance) + (GameSettings.VerticalOffset / 2));
             ImageFrame.Image = Resources.question_mark;
             ImageFrame.SizeMode = PictureBoxSizeMode.CenterImage;
             ImageFrame.BackColor = Settings.CardColor;

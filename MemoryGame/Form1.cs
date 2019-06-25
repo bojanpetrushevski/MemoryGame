@@ -160,9 +160,14 @@ namespace MemoryGame
             bool sound = GetSound();
             Color selectedColor = GetColor();
             GameSettings gameSettings = new GameSettings(selectedMode, selectedCateogry, sound, selectedColor);
-            Scene = new Scene(gameSettings);
-            this.Hide();
+            if (selectedMode == GameMode.PlayingMode.SinglePlayer)
+                Scene = new SingleplayerScene(gameSettings);
+            if (selectedMode == GameMode.PlayingMode.MultiPlayer)
+                Scene = new Scene(gameSettings);
+            //Scene = new Scene(gameSettings);
             Scene.ShowDialog();
+            this.Hide();
+            
         }
         private GameMode.PlayingMode GetSelectedMode()
         {
@@ -174,11 +179,11 @@ namespace MemoryGame
         private GameCategory GetSelectedCategory()
         {
             if (rb4x4.Checked)
-                return new GameCategory(16, 4, 4, 130, 130);
+                return new GameCategory(16, 4, 4, 120, 120);
             else if (rb4x5.Checked)
                 return new GameCategory(20, 4, 5, 120, 120);
             else
-                return new GameCategory(24, 4, 6, 110, 110);
+                return new GameCategory(24, 4, 6, 120, 120);
         }
         private bool GetSound()
         {
@@ -194,5 +199,6 @@ namespace MemoryGame
             else
                 return Color.White;
         }
+
     }
 }

@@ -126,7 +126,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MemoryGame.Properties.Resources.mainmenu_wallpaper;
-            this.ClientSize = new System.Drawing.Size(943, 640);
+            this.ClientSize = new System.Drawing.Size(944, 640);
+            this.ControlBox = false;
             this.Controls.Add(this.lbGameCateogry);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbTime);
@@ -134,9 +135,9 @@
             this.Controls.Add(this.lbPlayerName);
             this.Controls.Add(this.lbRank);
             this.Controls.Add(this.lbBestScoresTitle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BestScores";
-            this.Text = "BestScores";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

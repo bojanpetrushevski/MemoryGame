@@ -86,6 +86,7 @@
     <Compile Include="Options.Designer.cs">
       <DependentUpon>Options.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pair.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -96,6 +97,13 @@
       <DependentUpon>Scene.cs</DependentUpon>
     </Compile>
     <Compile Include="Score.cs" />
+    <Compile Include="SingleplayerGame.cs" />
+    <Compile Include="SingleplayerScene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SingleplayerScene.Designer.cs">
+      <DependentUpon>SingleplayerScene.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BestScores.resx">
       <DependentUpon>BestScores.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +131,9 @@
     </Compile>
     <EmbeddedResource Include="Scene.resx">
       <DependentUpon>Scene.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleplayerScene.resx">
+      <DependentUpon>SingleplayerScene.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -178,6 +189,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\mainmenu_wallpaper.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\stopwatch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\stopwatch_clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\checked.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

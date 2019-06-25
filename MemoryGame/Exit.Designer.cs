@@ -81,7 +81,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MemoryGame.Properties.Resources.mainmenu_wallpaper;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(556, 235);
+            this.ClientSize = new System.Drawing.Size(568, 235);
             this.ControlBox = false;
             this.Controls.Add(this.lbNo);
             this.Controls.Add(this.lbYes);

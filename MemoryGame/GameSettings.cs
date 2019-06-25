@@ -13,7 +13,7 @@ namespace MemoryGame
         public int Height { set; get; }
         public static int CardDistance = 10;
         public static int HorizontalOffset = 150;
-        public static int VerticalOffset = 250;
+        public static int VerticalOffset = 150;
         public GameMode.PlayingMode GameMode { set; get; }
         public GameCategory SelectedCategory { set; get; }
         public bool Sound { set; get; }
@@ -33,7 +33,7 @@ namespace MemoryGame
         }
         public void CalculateHeight()
         {
-            Height = (SelectedCategory.Rows * SelectedCategory.CardHeight) + ((SelectedCategory.Rows - 1) * CardDistance) + (2 * VerticalOffset);
+            Height = (SelectedCategory.Rows * SelectedCategory.CardHeight) + ((SelectedCategory.Rows - 1) * CardDistance) + (VerticalOffset + VerticalOffset / 2);
         }
         public new string ToString()
         {

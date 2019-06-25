@@ -37,14 +37,13 @@
             this.BackgroundImage = global::MemoryGame.Properties.Resources.mainmenu_wallpaper;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ControlBox = false;
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "Scene";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Scene";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Scene_FormClosed);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Scene_KeyPress);
+
             this.ResumeLayout(false);
 
         }

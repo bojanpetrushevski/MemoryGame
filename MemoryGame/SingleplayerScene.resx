@@ -117,56 +117,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="car" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\car.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAACDdJREFUeF7tnFeILEUUhtecExgxZxTEnDOYs2LCAGbBhPpixhzBrNcEJlRMiIL6
+        4ovpmrMi5og+mFDBHP+vds7d2qJ7dnamTs3sbv/ws1M101WnT3dVnVC1Qw0aNGjQG7YXvxD/Gye5hmun
+        PL4UqxTUCVHilIcpY7zo9rpJh0aBPaJRYI9o5sAe0azCmWEKSlFX3yDBlFPgmeIP4hvi2lSMEwuKW4kn
+        ineKpqg68ht+yzVc2w3mE08WjxPnoqJfuFyMbw5FdqLEZcSTxOniP2LcxnjItbSBQmmzEywiviNaGy+I
+        C4jFYcr7Q9xLfLBVfl2swsziHuKz4r+i3cDv4lPixeKh4sbi8uJC4iwt8pm6TUV+c4nINVxr7dDmMyJ9
+        zCRWgfqXRX6PEj9ufS6uxFh5u1Ah7CNS900ojWBW8SAxfuo/ireJ24q9DCGuZSWmrZ9Ea5++DhTpO8ZS
+        It8j97Iib21xJVYpj6dOmfqzqWhhLfFVkXr4nni46DHv0OYR4vui9cfbtqZoWEz8W+S7J8S5xVSJrnMi
+        CwYd1SkP8vQR6kLxr1bdpyJvKMO4CsxLVWB+Y8hXYeHW3xT0sa/4uUjfyIAsyBSPAlilRBYWN9gw2T2U
+        RivvGtEEtKfMHHWu2O6p7i/y28NCaTSY02AKfss1+4VSNejzPNHmSZMJGTcTv26VUSLD2WRnQXLD2yKd
+        3C/uLcbKAzYPwg/EdcSxsK7I0NkklDrD1uJLIteOhfVEZDG5kBGgRKuz+0CJmDhuQBgWAOvYSMdHiva0
+        WZHnF2Owil4vLhdKPlhRvE6krxjI8pCIbMiIrOloeVFcVHQHT/1N8XuR4WmCGFESpkeK40W+95xjrI9j
+        Q2k0kAnZYlmRnYVlabFvYMI2gZhz6jC7uHPrrxc66QMZTV4bzn3DCiJ2H8JMoyIjDhBp9+5QygtkpW1k
+        T4d7McwjviUiCPNLPGy3FG8RezFMWaRo+4FQ6h74yzeLyGRA1kdE2mc6crX96nCViACscOnKhcB8t3ko
+        dQeGIm08Gkrdg6AD7dwQSiNgYflI5Ducg6LABMCRZ/mvMlV46vET7wa5FAi2EKsiN1gV3AMrMT54EfD6
+        28obu225sZNIH4+Fkh9sUWEo13lKWXGISIefiHNS4QQzdKs8kZzAlTO372AqPIF58JlIZ0zyBoxjbK+c
+        JoqXAucQjxFjg97cSV4KTzNrhmnxrhi/7jeJ1DNv5YKXAgmC0O6NoTQM7uVDkXrsWjcQGaETwkYxsAfx
+        MHI+PSLb9FUXoO0WyIisqUuJe0d/T4aSA1YX6YCIjOfcZ1hDpD9szRLAFrRo06pU5IbFAon+lkBpBYI7
+        RPo8NZQyg/ARjROGLwHeAvojwlwKO4r0+XwoZQTRX5I2v4msYoY9xU5ict2AKDE3g4nhBWQnIWZgGGNY
+        4yRkzY/sIHIz8QRL7AylEkfzQAkFMqq4hzilwKpPv9uEUiacJdLoRaE0AlYu3CQPEKOjTzYfeQF386jh
+        jzNwqUi/p4dSJtwr0qi7pR6BIUSfRMBLwjytu0IpE8z+K+VwryySd6FP5iM+l4rbmQGf1R40X7FE6Hs1
+        kS0i9BeTulVEb2Bg0x9pzmywRFKJzD0BVPoiCsNOAvh4q46pxBtsI6GvrFOHKTCOOk8X65LevcDytUuE
+        0jCWFKn7KpTyIr2P2cTsCrTNQLECWe5zO/rAFIjSDLanxUOB6X2YAkl/ZoPNSSWG8H0ifTFs+zmEvwul
+        TLDcAcatN3Dh6hYRVmdv2CJCricbzA9mf14JYLLcI5ry+FzKjCERRp/PhVImkJul0ZKGNDAFloRtXCIy
+        kw24NTTKLtIYuEGexrW3AjcS0+CwuXKnhFIm7CrSKNtqDYuL1HkFEwBbz6AXkJ17iDcVmddFVjAbyKmS
+        OyWcFUejyR90soVtUEE4K86BkKEjnMWmzHR3Wc+whWS7UJqcsGQ+xnV2nCPSeKmQfj9g51RIX2THSiIe
+        SamkUmkwfH8WuUeyjC7ANuIJEUiNwc5QktWuSelMQEY2AaR25dEi9/Z0KDmBsxd0QqLHO7HuhbES6+xS
+        cAMHV+w4QLxDHveH7bUT4Q0kKYascWLddlzgvsUBExdYBp8gK/PGREe8uYhjZO7gCbHdgg7b7YmeKDhf
+        5F441VRkexvAfWO1wuhkk2IKDG/cpEEBeQ62JKfYQLQ88IZUlMS1Ik+OUFdqtefY4psLdVt8iW2ynY3v
+        rqSiNJiMXxMRgA3b8eRLvpWVuUQAdiwwGpClbpP5K2LfFj8CnJYvyX3MwRN2zAHZsWH7Cs6t/SIi0FgH
+        bdgiEu+tyQ3aZoNQuzfK9kQjM3PjQGA30c6c1R31YlMj32ODeeEEkT7qjnphPPM9siLzQIGdWoS7EPBh
+        seqwYdVBwJzAh+UBpn0gCzIh268ix3QHEqy6lhBida4ycVKwlZf9eOPJtzBtcES2k39wsb5oqy2yDcyw
+        rQMLix3zJ7eKodruKBUuIb9NAxQgTXobzPFvd+Aau+8C8U+R32Iol8jqZQGT+dWiJeRxlXDS6yx9jpxW
+        oV3ynpRCFZjrCHqYe4YMV4iei5cb8EbMVoQ46ySiPA730SZvpkVVIDbeIHlEXYG3jv/UYVEcSFCWtCEm
+        Ry/KJBBA8odIMsFQax8lEhgo5tuWAEOLBA5BWRvaEF+UYco/0+GmWYgINbHFgvAZ5DN1fEfe9jKRudHm
+        N0ibtM0h6iozalIBM4NcM4kq+9co3ZBrWY1PE+P43pQCZ43xUM4QbxdZeRnubO7BroTftur47lYR5fMf
+        i+YVGzRo0KBBgwZTEEND/wPyjr03YDizCQAAAABJRU5ErkJggg==
+</value>
   </data>
-  <data name="cat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\cat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dog" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\dog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="guitar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\guitar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gun" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\gun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\hat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="house" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\house.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="joystick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\joystick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="laptop" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\laptop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mainmenu_wallpaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\mainmenu_wallpaper.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\pen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="question_mark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\question_mark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rugby_ball" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\rugby_ball.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="stopwatch" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\stopwatch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="stopwatch_clock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\stopwatch_clock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tennis_racket" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\tennis_racket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_checked" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\checked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
