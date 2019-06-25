@@ -44,6 +44,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scene";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Scene_FormClosed);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Scene_KeyPress);
             this.ResumeLayout(false);
 
         }

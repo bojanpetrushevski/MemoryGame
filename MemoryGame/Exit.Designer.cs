@@ -82,16 +82,17 @@
             this.BackgroundImage = global::MemoryGame.Properties.Resources.mainmenu_wallpaper;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(556, 235);
+            this.ControlBox = false;
             this.Controls.Add(this.lbNo);
             this.Controls.Add(this.lbYes);
             this.Controls.Add(this.lbSureQuit);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Exit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Exit";
             this.ResumeLayout(false);
             this.PerformLayout();
 
