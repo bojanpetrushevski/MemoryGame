@@ -12,11 +12,11 @@ namespace MemoryGame
 {
     public partial class Exit : Form
     {
-        public Form MainMenu { set; get; }
-        public Exit(Form mainMenu)
+        public Form Caller { set; get; }
+        public Exit(Form caller)
         {
             InitializeComponent();
-            MainMenu = mainMenu;
+            Caller = caller;
         }
 
         private void lbYes_MouseEnter(object sender, EventArgs e)
@@ -45,13 +45,15 @@ namespace MemoryGame
 
         private void lbYes_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Test");
             Application.Exit();
         }
 
         private void lbNo_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Tesdsdt");
+            Caller.Show();
             this.Dispose();
-            MainMenu.Show();
         }
     }
 }

@@ -31,8 +31,8 @@ namespace MemoryGame
         public void CreateDropDownList()
         {
             List<string> DropDownList = new List<string>();
-            DropDownList.Add("Blue");
             DropDownList.Add("White");
+            DropDownList.Add("Blue");
             comboBox1.DataSource = DropDownList;
         }
         private void btnOnOff_Click(object sender, EventArgs e)

@@ -12,3 +12,4 @@ C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\obj\Debug\
 C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\obj\Debug\MemoryGame.Options.resources
 C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\obj\Debug\MemoryGame.BestScores.resources
 C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\obj\Debug\MemoryGame.ChooseGameCategory.resources
+C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\obj\Debug\MemoryGame.Scene.resources

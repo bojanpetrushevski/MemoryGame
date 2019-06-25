@@ -15,9 +15,19 @@ namespace MemoryGame
         public Game Game { set; get; }
         public GameSettings Settings { set; get; }
         public CardsCreator Creator { set; get; }
-        public Scene()
+        public Scene(GameSettings gameSettings)
         {
             InitializeComponent();
+            Settings = gameSettings;
+            SetScene();
+        }
+        public void SetScene()
+        {
+            PictureBox[] frames = CreateImageFrames();
+            Creator = new CardsCreator(Settings, frames);
+            Game = new Game(Creator.CreateCards());
+            this.Width = Settings.Width;
+            this.Height = Settings.Height;
         }
         public PictureBox[] CreateImageFrames()
         {
@@ -38,6 +48,12 @@ namespace MemoryGame
         private void pb_MouseClick(object sender, EventArgs e)
         {
             Game.CheckClicked((PictureBox)sender);
+        }
+
+        private void Scene_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Exit exitForm = new Exit(this);
+            exitForm.ShowDialog();
         }
     }
 }

@@ -41,6 +41,7 @@ namespace MemoryGame
                     ImageFrame.Image = Image;
                 else
                     ImageFrame.Image = Resources.question_mark;
+                IsOpen = !IsOpen;
             }
         }
       

@@ -11,6 +11,9 @@ namespace MemoryGame
     {
         public int Width { set; get; }
         public int Height { set; get; }
+        public static int CardDistance = 10;
+        public static int HorizontalOffset = 150;
+        public static int VerticalOffset = 250;
         public GameMode.PlayingMode GameMode { set; get; }
         public GameCategory SelectedCategory { set; get; }
         public bool Sound { set; get; }
@@ -21,6 +24,16 @@ namespace MemoryGame
             SelectedCategory = selectedCategory;
             Sound = sound;
             CardColor = cardColor;
+            CalculateWidth();
+            CalculateHeight();
+        }
+        public void CalculateWidth()
+        {
+            Width = (SelectedCategory.Columns * SelectedCategory.CardWidth) + ((SelectedCategory.Columns - 1) * CardDistance) + (2 * HorizontalOffset);
+        }
+        public void CalculateHeight()
+        {
+            Height = (SelectedCategory.Rows * SelectedCategory.CardHeight) + ((SelectedCategory.Rows - 1) * CardDistance) + (2 * VerticalOffset);
         }
         public new string ToString()
         {

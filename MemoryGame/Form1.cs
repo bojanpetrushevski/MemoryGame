@@ -13,6 +13,7 @@ namespace MemoryGame
 {
     public partial class Form1 : Form
     {
+        public Scene Scene { set; get; }
         public Options Options { set; get; }
         public Form1()
         {
@@ -142,7 +143,6 @@ namespace MemoryGame
 
         private void lbExit_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Exit exitForm = new Exit(this);
             exitForm.ShowDialog();
         }
@@ -160,6 +160,9 @@ namespace MemoryGame
             bool sound = GetSound();
             Color selectedColor = GetColor();
             GameSettings gameSettings = new GameSettings(selectedMode, selectedCateogry, sound, selectedColor);
+            Scene = new Scene(gameSettings);
+            this.Hide();
+            Scene.ShowDialog();
         }
         private GameMode.PlayingMode GetSelectedMode()
         {
@@ -171,11 +174,11 @@ namespace MemoryGame
         private GameCategory GetSelectedCategory()
         {
             if (rb4x4.Checked)
-                return new GameCategory(16, 4, 4, 150, 150);
+                return new GameCategory(16, 4, 4, 130, 130);
             else if (rb4x5.Checked)
-                return new GameCategory(20, 4, 5, 140, 140);
+                return new GameCategory(20, 4, 5, 120, 120);
             else
-                return new GameCategory(24, 4, 6, 130, 130);
+                return new GameCategory(24, 4, 6, 110, 110);
         }
         private bool GetSound()
         {
