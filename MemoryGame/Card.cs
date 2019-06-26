@@ -20,6 +20,8 @@ namespace MemoryGame
         public static int Height { set; get; }
         public bool IsOpen { set; get; }
         public bool Paired { set; get; }
+        public Color PrimaryColor { set; get; }
+        public Color CurrentColor { set; get; }
         public Card (Bitmap Image, PictureBox ImageFrame, int Width, int Height)
         {
             this.Image = Image;
@@ -28,6 +30,8 @@ namespace MemoryGame
             Card.Height = Height;
             IsOpen = false;
             Paired = false;
+            PrimaryColor = ImageFrame.BackColor;
+            CurrentColor = PrimaryColor;
         }
         /// <summary>
         /// Toggles the card.
@@ -35,15 +39,38 @@ namespace MemoryGame
         /// </summary>
         public void Toggle()
         {
-            if(!Paired)
+            if (!Paired)
             {
                 if (BitmapComparator.CompareBitmaps((Bitmap)ImageFrame.Image, Resources.question_mark))
+                {
                     ImageFrame.Image = Image;
+                    ImageFrame.BackColor = PrimaryColor;
+                }
                 else
+                {
                     ImageFrame.Image = Resources.question_mark;
+                    ImageFrame.BackColor = CurrentColor;
+                }
                 IsOpen = !IsOpen;
             }
         }
-      
+        public void MarkPaired()
+        {
+            Paired = true;
+            ImageFrame.BackColor = Color.FromArgb(91, 155, 142);
+        }
+        public void ChangeColor()
+        {
+            if (!Paired)
+            {
+                if (CurrentColor == PrimaryColor)
+                    CurrentColor = Color.FromArgb(190, 210, 216);
+                else
+                    CurrentColor = PrimaryColor;
+                if (!IsOpen)
+                    ImageFrame.BackColor = CurrentColor;
+            }
+            
+        }
     }
 }

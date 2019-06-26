@@ -41,12 +41,17 @@ namespace MemoryGame
                 this.Controls.Add(Boxes[i]);
             }
             AddPicutreBoxesEventHandlers(Boxes);
+
             return Boxes;
         }
         public void AddPicutreBoxesEventHandlers(PictureBox[] Frames)
         {
             foreach (PictureBox pb in Frames)
+            {
                 pb.MouseClick += pb_MouseClick;
+                pb.MouseEnter += pb_MouseEnter;
+                pb.MouseLeave += pb_MouseLeave;
+            }      
         }
         private void pb_MouseClick(object sender, EventArgs e)
         {
@@ -74,6 +79,16 @@ namespace MemoryGame
                 Game.Miss(pair.Card1, pair.Card2);
             }
         }
+        private void pb_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+            Game.UpdateCardColor((PictureBox)sender);
+        }
+        private void pb_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+            Game.UpdateCardColor((PictureBox)sender);
+        }
         public void UpdateStats()
         {
             Invalidate(true);
@@ -88,12 +103,6 @@ namespace MemoryGame
                 timer.Start();
             }
         }
-        private void SingleplayerScene_Load(object sender, EventArgs e)
-        {
-            if (DesignMode)
-                return;
-        }
-
         private void timer_Tick(object sender, EventArgs e)
         {
             Game.UpdateTime();

@@ -165,8 +165,8 @@ namespace MemoryGame
             if (selectedMode == GameMode.PlayingMode.MultiPlayer)
                 Scene = new Scene(gameSettings);
             //Scene = new Scene(gameSettings);
-            Scene.ShowDialog();
             this.Hide();
+            Scene.ShowDialog();
             
         }
         private GameMode.PlayingMode GetSelectedMode()

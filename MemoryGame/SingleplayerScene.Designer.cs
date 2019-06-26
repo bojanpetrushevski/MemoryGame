@@ -124,7 +124,6 @@
             this.Controls.Add(this.lbSingleplayerModeTitle);
             this.Controls.Add(this.pnStats);
             this.Name = "SingleplayerScene";
-            this.Load += new System.EventHandler(this.SingleplayerScene_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.SingleplayerScene_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SingleplayerScene_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -18,11 +18,11 @@ namespace MemoryGame
             Blocked = false;
             OpenCards = 0;
         }
-        public void OpenCard(PictureBox ClickedFrame)
+        public void OpenCard(PictureBox clickedFrame)
         {
             foreach (Card c in Cards)
                 if(!c.IsOpen)
-                    if (c.ImageFrame == ClickedFrame)
+                    if (c.ImageFrame == clickedFrame)
                         c.Toggle();   
         }
         public Pair CheckPair()
@@ -44,16 +44,22 @@ namespace MemoryGame
         }
         public void Hit(Card c1, Card c2)
         {
-            c1.Paired = true;
-            c2.Paired = true;
+            c1.MarkPaired();
+            c2.MarkPaired();
         }
         public async void Miss(Card c1, Card c2)
         { 
             ToggleBlocked();
-            await PutTaskDelay(2000);
+            await PutTaskDelay(1500);
             c1.Toggle();
             c2.Toggle();
             ToggleBlocked();
+        }
+        public void UpdateCardColor(PictureBox hoveredFrame)
+        {
+            foreach (Card c in Cards)
+                if (c.ImageFrame == hoveredFrame)
+                    c.ChangeColor();
         }
         public async Task PutTaskDelay(int miliseconds)
         {
