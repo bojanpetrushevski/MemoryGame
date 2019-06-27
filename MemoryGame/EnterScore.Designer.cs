@@ -101,6 +101,8 @@
             this.lbOK.TabIndex = 5;
             this.lbOK.Text = "OK";
             this.lbOK.Click += new System.EventHandler(this.lbOK_Click);
+            this.lbOK.MouseEnter += new System.EventHandler(this.lbOK_MouseEnter);
+            this.lbOK.MouseLeave += new System.EventHandler(this.lbOK_MouseLeave);
             // 
             // EnterScore
             // 
@@ -109,6 +111,7 @@
             this.BackgroundImage = global::MemoryGame.Properties.Resources.mainmenu_wallpaper;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(652, 340);
+            this.ControlBox = false;
             this.Controls.Add(this.lbOK);
             this.Controls.Add(this.tbTime);
             this.Controls.Add(this.tbName);
@@ -116,8 +119,9 @@
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.lbEnterYourNameTitle);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "EnterScore";
-            this.Text = "EnterScore";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();
 

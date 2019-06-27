@@ -12,9 +12,11 @@ namespace MemoryGame
 {
     public partial class ChooseGameCategory : Form
     {
-        public ChooseGameCategory()
+        public Form1 Caller { set; get; }
+        public ChooseGameCategory(Form1 caller)
         {
             InitializeComponent();
+            Caller = caller;
         }
         private void lb4x4_MouseEnter(object sender, EventArgs e)
         {
@@ -55,9 +57,31 @@ namespace MemoryGame
         private void lb4x4_Click(object sender, EventArgs e)
         {
             this.Hide();
-            BestScoresData dataReader = new BestScoresData();
+            BestScores.CreateBestScores(Caller);
             BestScores.ShowData(BestScoresData.Best4x4);
             BestScores.ShowBestScores();
+        }
+
+        private void lb4x5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BestScores.CreateBestScores(Caller);
+            BestScores.ShowData(BestScoresData.Best4x5);
+            BestScores.ShowBestScores();
+        }
+
+        private void lb4x6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BestScores.CreateBestScores(Caller);
+            BestScores.ShowData(BestScoresData.Best4x6);
+            BestScores.ShowBestScores();
+        }
+
+        private void pbBackArrow_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            Caller.Show();
         }
     }
 }

@@ -162,13 +162,11 @@ namespace MemoryGame
             Color selectedColor = GetColor();
             GameSettings gameSettings = new GameSettings(selectedMode, selectedCateogry, sound, selectedColor);
             if (selectedMode == GameMode.PlayingMode.SinglePlayer)
-                Scene = new SingleplayerScene(gameSettings);
+                Scene = new SingleplayerScene(gameSettings, this);
             if (selectedMode == GameMode.PlayingMode.MultiPlayer)
-                Scene = new Scene(gameSettings);
-            //Scene = new Scene(gameSettings);
+                Scene = new Scene(gameSettings, this);
             this.Hide();
             Scene.ShowDialog();
-            
         }
         private GameMode.PlayingMode GetSelectedMode()
         {
@@ -203,9 +201,23 @@ namespace MemoryGame
 
         private void lbBestScores_Click(object sender, EventArgs e)
         {
-            CategoryStats = new ChooseGameCategory();
             this.Hide();
+            CategoryStats = new ChooseGameCategory(this);
             CategoryStats.ShowDialog();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            BestScoresData data = new BestScoresData();
+            DataReader reader = new DataReader();
+            reader.ReadFromFile();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MessageBox.Show("Closing...");
+            DataWriter writer = new DataWriter();
+            writer.WriteToFile();
         }
     }
 }

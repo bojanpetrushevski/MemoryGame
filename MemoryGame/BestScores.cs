@@ -12,14 +12,20 @@ namespace MemoryGame
 {
     public partial class BestScores : Form
     {
-        private static BestScores BestScoresInstance = new BestScores();
-        private BestScores()
+        private static BestScores BestScoresInstance { set; get; }
+        public Form1 MainForm { set; get; } 
+        private BestScores(Form1 mainForm)
         {
             InitializeComponent();
+            MainForm = mainForm;
+        }
+        public static void CreateBestScores(Form1 mainForm)
+        {
+            BestScoresInstance = new BestScores(mainForm);
         }
         public static void ShowBestScores()
         {
-            BestScoresInstance.ShowDialog();
+            BestScoresInstance.Show();          
         }
         public static void ShowData(SortedSet<Score> scores)
         {
@@ -40,11 +46,29 @@ namespace MemoryGame
             }
         }
 
-
+        public void ClearData()
+        {
+            Control[] controls = null;
+            Label lb = null;
+            for (int i = 0; i < 5; i++)
+            {
+                controls = BestScoresInstance.Controls.Find("lbName" + (i + 1), false);
+                lb = (Label)controls[0];
+                lb.Text = "";
+                controls = BestScoresInstance.Controls.Find("lbDate" + (i + 1), false);
+                lb = (Label)controls[0];
+                lb.Text = "";
+                controls = BestScoresInstance.Controls.Find("lbTime" + (i + 1), false);
+                lb = (Label)controls[0];
+                lb.Text = "";
+            }
+        }
         private void pbBackArrow_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            ChooseGameCategory chooseGameCategory = new ChooseGameCategory();
+            
+            BestScoresInstance.Hide();
+            ClearData();
+            ChooseGameCategory chooseGameCategory = new ChooseGameCategory(MainForm);
             chooseGameCategory.ShowDialog();
         }
     }

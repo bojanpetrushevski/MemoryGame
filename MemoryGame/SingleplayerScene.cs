@@ -17,7 +17,7 @@ namespace MemoryGame
         public SingleplayerGame Game { set; get; }
         public System.Media.SoundPlayer SoundPlayer { set; get; }
         public EnterScore EnterScore { set; get; }
-        public SingleplayerScene(GameSettings gameSettings) : base(gameSettings)
+        public SingleplayerScene(GameSettings gameSettings, Form1 caller) : base(gameSettings, caller)
         {
             InitializeComponent();
             SetScene();
@@ -123,13 +123,15 @@ namespace MemoryGame
         private void SingleplayerScene_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Escape)
-            {
-                timer.Stop();
-                Exit exitForm = new Exit(this);
-                exitForm.ShowDialog();
-                if(!Game.IsGameOver())
-                    timer.Start();
-            }
+                QuitGame();
+        }
+        public void QuitGame()
+        {
+            timer.Stop();
+            Exit exitForm = new Exit(this);
+            exitForm.ShowDialog();
+            if (!Game.IsGameOver())
+                timer.Start();
         }
         private void timer_Tick(object sender, EventArgs e)
         {
@@ -143,6 +145,12 @@ namespace MemoryGame
             int seconds = Game.TimeElapsed % 60;
             lbTimeElapsed.Text = String.Format("{0:00}:{1:00}", minutes, seconds);
             lbPairs.Text = String.Format("{0}/{1}", Game.Pairs, Game.Cards.Count / 2);
+        }
+
+        private void pbBackArrow_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            Caller.Show();
         }
     }
 }

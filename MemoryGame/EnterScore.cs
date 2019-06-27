@@ -19,6 +19,7 @@ namespace MemoryGame
             InitializeComponent();
             Scores = scores;
             FinishedTime = finishedTime;
+            SetTime();
         }
         public void SetTime()
         {
@@ -39,7 +40,7 @@ namespace MemoryGame
         private void lbOK_Click(object sender, EventArgs e)
         {
             string name = tbName.Text;
-            int time = int.Parse(tbTime.Text);
+            int time = ParseTime(tbTime.Text);
             Score s = new Score(new Player(name), time);
             AddScore(s);
             this.Close();
@@ -54,6 +55,18 @@ namespace MemoryGame
             int minutes = int.Parse(parts[0]);
             int seconds = int.Parse(parts[1]);
             return minutes * 60 + seconds;
+        }
+
+        private void lbOK_MouseEnter(object sender, EventArgs e)
+        {
+            lbOK.ForeColor = Color.Yellow;
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void lbOK_MouseLeave(object sender, EventArgs e)
+        {
+            lbOK.ForeColor = Color.White;
+            this.Cursor = Cursors.Default;
         }
     }
 }

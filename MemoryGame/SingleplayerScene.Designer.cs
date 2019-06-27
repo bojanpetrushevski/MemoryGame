@@ -37,9 +37,11 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbSingleplayerModeTitle = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.pbBackArrow = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBackArrow)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -116,11 +118,24 @@
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // pbBackArrow
+            // 
+            this.pbBackArrow.BackColor = System.Drawing.Color.Transparent;
+            this.pbBackArrow.Image = ((System.Drawing.Image)(resources.GetObject("pbBackArrow.Image")));
+            this.pbBackArrow.Location = new System.Drawing.Point(23, 24);
+            this.pbBackArrow.Name = "pbBackArrow";
+            this.pbBackArrow.Size = new System.Drawing.Size(42, 41);
+            this.pbBackArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbBackArrow.TabIndex = 4;
+            this.pbBackArrow.TabStop = false;
+            this.pbBackArrow.Click += new System.EventHandler(this.pbBackArrow_Click);
+            // 
             // SingleplayerScene
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 764);
+            this.Controls.Add(this.pbBackArrow);
             this.Controls.Add(this.lbSingleplayerModeTitle);
             this.Controls.Add(this.pnStats);
             this.Name = "SingleplayerScene";
@@ -130,6 +145,7 @@
             this.pnStats.ResumeLayout(false);
             this.pnStats.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBackArrow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,5 +160,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lbSingleplayerModeTitle;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.PictureBox pbBackArrow;
     }
 }

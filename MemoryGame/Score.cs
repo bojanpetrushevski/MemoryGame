@@ -26,9 +26,9 @@ namespace MemoryGame
         }
         public int CompareTo(Score s)
         {
-            if (s.FinishedTime < s.FinishedTime)
+            if (FinishedTime < s.FinishedTime)
                 return -1;
-            if (s.FinishedTime > s.FinishedTime)
+            if (FinishedTime > s.FinishedTime)
                 return 1;
             else
                 return 0;
@@ -47,15 +47,17 @@ namespace MemoryGame
         }
         public string FinishedTimeFormat()
         {
-            return String.Format("{0}:{1}", InMinutes(), InSeconds());
+            return String.Format("{0:00}:{1:00}", InMinutes(), InSeconds());
         }
         public string ClockFormat()
         {
-            return Date.TimeOfDay.ToString();
+            string timeOfDay = Date.TimeOfDay.ToString();
+            int index = timeOfDay.IndexOf('.');
+            return timeOfDay.Substring(0, index);
         }
         public string DateFormat()
         {
-            return String.Format("{0}/{1}/{2}-{3}", Date.Day, Date.Month, Date.Year, ClockFormat());
+            return String.Format("{0:00}/{1:00}/{2}-{3}", Date.Day, Date.Month, Date.Year, ClockFormat());
         }
     }
 }

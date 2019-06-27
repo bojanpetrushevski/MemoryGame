@@ -12,11 +12,11 @@ namespace MemoryGame
 {
     public partial class Options : Form
     {
-        public Form MainMenu { set; get; }
+        public Form1 MainMenu { set; get; }
         public static int AvailibleColors = 2;
         public static string ButtonText { set; get; }
         public static string DropDownSelectedItem { set; get; }
-        public Options(Form mainMenu)
+        public Options(Form1 mainMenu)
         {
             InitializeComponent();
             MainMenu = mainMenu;

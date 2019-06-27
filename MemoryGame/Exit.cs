@@ -45,6 +45,8 @@ namespace MemoryGame
 
         private void lbYes_Click(object sender, EventArgs e)
         {
+            DataWriter writer = new DataWriter();
+            writer.WriteToFile();
             this.Dispose();
             Caller.Dispose();
             Application.Exit();

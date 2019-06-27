@@ -65,6 +65,8 @@
     <Compile Include="ChooseGameCategory.Designer.cs">
       <DependentUpon>ChooseGameCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataReader.cs" />
+    <Compile Include="DataWriter.cs" />
     <Compile Include="EnterScore.cs">
       <SubType>Form</SubType>
     </Compile>

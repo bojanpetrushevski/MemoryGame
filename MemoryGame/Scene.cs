@@ -12,16 +12,19 @@ namespace MemoryGame
 {
     public partial class Scene : Form
     {
+
         public GameSettings Settings { set; get; }
         public CardsCreator Creator { set; get; }
+        public Form1 Caller { set; get; }
         public Scene()
         {
             InitializeComponent();
         }
-        public Scene(GameSettings gameSettings) : base()
+        public Scene(GameSettings gameSettings, Form1 caller) : base()
         {
             InitializeComponent();
             Settings = gameSettings;
+            Caller = caller;
         }
     }
 }

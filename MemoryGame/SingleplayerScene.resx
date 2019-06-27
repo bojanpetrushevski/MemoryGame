@@ -162,4 +162,16 @@
   <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="pbBackArrow.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAAU1JREFUWEftlrFKxEAURYOIiIWFlViI1VZiaW1lZWUhfoCVtT9gbb2VbGHlB4i1
+        WFtZWlmIhciyiIiISDz3OWMSTXbF3XlVDhzIzDxy32aTSbKWlnHI81x2wtAXgpfwHI/DlB+E7mIfRS9M
+        p4ewBTy12AKfBgjaxDuLrJK2AQLmsIsfSquhh1Mj1Hkq/gkK1/EGh6HG3ob4WvKl5DPeh6gqLEzjIb5j
+        SgYhsoDJDl7ZcnqKBhjIfdTl8eKrAQ4WUZuKNwOFb+GDDf2xBnZ0YEN/vv+CZbywKV8qN6E2jAPU8+pF
+        7WO4hte2nJ7fDQgWZvEIm7bfSVHfQISCDby10smiHyb7IaoZiubxBJvQml5YUV29sjMltcVH7UUVYkZD
+        8TY+4k9cP0i0Y55ZbIFfA4JAuYdPSgffBiIEr+Al+n+URgjXjbQahi0t/yDLPgFwT5Ao2qWY0wAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
 </root>
