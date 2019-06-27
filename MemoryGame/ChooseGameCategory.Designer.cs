@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.lbChooseGameCateogryTitle = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lb4x6 = new System.Windows.Forms.Label();
+            this.lb4x5 = new System.Windows.Forms.Label();
+            this.lb4x4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbChooseGameCateogryTitle
@@ -44,56 +44,67 @@
             this.lbChooseGameCateogryTitle.Name = "lbChooseGameCateogryTitle";
             this.lbChooseGameCateogryTitle.Size = new System.Drawing.Size(556, 58);
             this.lbChooseGameCateogryTitle.TabIndex = 0;
-            this.lbChooseGameCateogryTitle.Text = "Choose game cateogry ";
+            this.lbChooseGameCateogryTitle.Text = "Choose game category ";
             // 
-            // label1
+            // lb4x6
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.8F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(332, 144);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 46);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "4 x 4";
+            this.lb4x6.AutoSize = true;
+            this.lb4x6.BackColor = System.Drawing.Color.Transparent;
+            this.lb4x6.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.8F);
+            this.lb4x6.ForeColor = System.Drawing.Color.White;
+            this.lb4x6.Location = new System.Drawing.Point(332, 327);
+            this.lb4x6.Name = "lb4x6";
+            this.lb4x6.Size = new System.Drawing.Size(107, 46);
+            this.lb4x6.TabIndex = 2;
+            this.lb4x6.Text = "4 x 6";
+            this.lb4x6.MouseEnter += new System.EventHandler(this.lb4x6_MouseEnter);
+            this.lb4x6.MouseLeave += new System.EventHandler(this.lb4x6_MouseLeave);
             // 
-            // label2
+            // lb4x5
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.8F);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(332, 327);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 46);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "4 x 6";
+            this.lb4x5.AutoSize = true;
+            this.lb4x5.BackColor = System.Drawing.Color.Transparent;
+            this.lb4x5.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.8F);
+            this.lb4x5.ForeColor = System.Drawing.Color.White;
+            this.lb4x5.Location = new System.Drawing.Point(332, 234);
+            this.lb4x5.Name = "lb4x5";
+            this.lb4x5.Size = new System.Drawing.Size(107, 46);
+            this.lb4x5.TabIndex = 3;
+            this.lb4x5.Text = "4 x 5";
+            this.lb4x5.MouseEnter += new System.EventHandler(this.lb4x5_MouseEnter);
+            this.lb4x5.MouseLeave += new System.EventHandler(this.lb4x5_MouseLeave);
             // 
-            // label3
+            // lb4x4
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.8F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(332, 234);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 46);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "4 x 5";
+            this.lb4x4.AutoSize = true;
+            this.lb4x4.BackColor = System.Drawing.Color.Transparent;
+            this.lb4x4.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.8F);
+            this.lb4x4.ForeColor = System.Drawing.Color.White;
+            this.lb4x4.Location = new System.Drawing.Point(332, 144);
+            this.lb4x4.Name = "lb4x4";
+            this.lb4x4.Size = new System.Drawing.Size(107, 46);
+            this.lb4x4.TabIndex = 1;
+            this.lb4x4.Text = "4 x 4";
+            this.lb4x4.Click += new System.EventHandler(this.lb4x4_Click);
+            this.lb4x4.MouseEnter += new System.EventHandler(this.lb4x4_MouseEnter);
+            this.lb4x4.MouseLeave += new System.EventHandler(this.lb4x4_MouseLeave);
             // 
             // ChooseGameCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MemoryGame.Properties.Resources.mainmenu_wallpaper;
-            this.ClientSize = new System.Drawing.Size(786, 433);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(782, 441);
+            this.ControlBox = false;
+            this.Controls.Add(this.lb4x5);
+            this.Controls.Add(this.lb4x6);
+            this.Controls.Add(this.lb4x4);
             this.Controls.Add(this.lbChooseGameCateogryTitle);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "ChooseGameCategory";
-            this.Text = "ChooseGameCategory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,8 +113,8 @@
         #endregion
 
         private System.Windows.Forms.Label lbChooseGameCateogryTitle;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lb4x6;
+        private System.Windows.Forms.Label lb4x5;
+        private System.Windows.Forms.Label lb4x4;
     }
 }

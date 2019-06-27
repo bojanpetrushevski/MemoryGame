@@ -91,6 +91,15 @@ namespace MemoryGame.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream correct_sound {
+            get {
+                return ResourceManager.GetStream("correct_sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap dog {
@@ -197,6 +206,15 @@ namespace MemoryGame.Properties {
             get {
                 object obj = ResourceManager.GetObject("rugby_ball", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream select_sound {
+            get {
+                return ResourceManager.GetStream("select_sound", resourceCulture);
             }
         }
         

@@ -102,11 +102,11 @@
             // 
             this.lbSingleplayerModeTitle.AutoSize = true;
             this.lbSingleplayerModeTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lbSingleplayerModeTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.8F);
+            this.lbSingleplayerModeTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 29.8F);
             this.lbSingleplayerModeTitle.ForeColor = System.Drawing.Color.White;
-            this.lbSingleplayerModeTitle.Location = new System.Drawing.Point(229, 20);
+            this.lbSingleplayerModeTitle.Location = new System.Drawing.Point(183, 24);
             this.lbSingleplayerModeTitle.Name = "lbSingleplayerModeTitle";
-            this.lbSingleplayerModeTitle.Size = new System.Drawing.Size(350, 46);
+            this.lbSingleplayerModeTitle.Size = new System.Drawing.Size(440, 58);
             this.lbSingleplayerModeTitle.TabIndex = 2;
             this.lbSingleplayerModeTitle.Text = "Singleplayer mode";
             // 

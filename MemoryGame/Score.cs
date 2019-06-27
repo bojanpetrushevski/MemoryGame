@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MemoryGame
 {
-    public class Score
+    public class Score : IComparable<Score>
     {
         public Player Player { set; get; }
         public int FinishedTime { set; get; }
@@ -16,6 +17,45 @@ namespace MemoryGame
             Player = player;
             FinishedTime = finishedTime;
             Date = DateTime.Now;
+        }
+        public Score(Player player, int finishedTime, DateTime date)
+        {
+            Player = player;
+            FinishedTime = finishedTime;
+            Date = date;
+        }
+        public int CompareTo(Score s)
+        {
+            if (s.FinishedTime < s.FinishedTime)
+                return -1;
+            if (s.FinishedTime > s.FinishedTime)
+                return 1;
+            else
+                return 0;
+        }
+        public new string ToString()
+        {
+            return String.Format("{0} {1} {2}", Player.Name, DateFormat(), FinishedTimeFormat());
+        }
+        public int InMinutes()
+        {
+            return FinishedTime / 60;
+        }
+        public int InSeconds()
+        {
+            return FinishedTime % 60;
+        }
+        public string FinishedTimeFormat()
+        {
+            return String.Format("{0}:{1}", InMinutes(), InSeconds());
+        }
+        public string ClockFormat()
+        {
+            return Date.TimeOfDay.ToString();
+        }
+        public string DateFormat()
+        {
+            return String.Format("{0}/{1}/{2}-{3}", Date.Day, Date.Month, Date.Year, ClockFormat());
         }
     }
 }

@@ -16,5 +16,48 @@ namespace MemoryGame
         {
             InitializeComponent();
         }
+        private void lb4x4_MouseEnter(object sender, EventArgs e)
+        {
+            lb4x4.ForeColor = Color.Yellow;
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void lb4x4_MouseLeave(object sender, EventArgs e)
+        {
+            lb4x4.ForeColor = Color.White;
+            this.Cursor = Cursors.Default;
+        }
+
+        private void lb4x5_MouseEnter(object sender, EventArgs e)
+        {
+            lb4x5.ForeColor = Color.Yellow;
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void lb4x5_MouseLeave(object sender, EventArgs e)
+        {
+            lb4x5.ForeColor = Color.White;
+            this.Cursor = Cursors.Default;
+        }
+
+        private void lb4x6_MouseEnter(object sender, EventArgs e)
+        {
+            lb4x6.ForeColor = Color.Yellow;
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void lb4x6_MouseLeave(object sender, EventArgs e)
+        {
+            lb4x6.ForeColor = Color.White;
+            this.Cursor = Cursors.Default;
+        }
+
+        private void lb4x4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BestScoresData dataReader = new BestScoresData();
+            BestScores.ShowData(BestScoresData.Best4x4);
+            BestScores.ShowBestScores();
+        }
     }
 }

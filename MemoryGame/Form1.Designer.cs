@@ -74,6 +74,7 @@ namespace MemoryGame
             this.lbBestScores.Size = new System.Drawing.Size(183, 37);
             this.lbBestScores.TabIndex = 3;
             this.lbBestScores.Text = "Best scores";
+            this.lbBestScores.Click += new System.EventHandler(this.lbBestScores_Click);
             this.lbBestScores.MouseEnter += new System.EventHandler(this.lbBestScores_MouseEnter);
             this.lbBestScores.MouseLeave += new System.EventHandler(this.lbBestScores_MouseLeave);
             // 
@@ -244,7 +245,7 @@ namespace MemoryGame
             this.Controls.Add(this.lbBestScores);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.Control;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";

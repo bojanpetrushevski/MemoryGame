@@ -15,6 +15,7 @@ namespace MemoryGame
     {
         public Scene Scene { set; get; }
         public Options Options { set; get; }
+        public ChooseGameCategory CategoryStats { set; get; }
         public Form1()
         {
             InitializeComponent();
@@ -200,5 +201,11 @@ namespace MemoryGame
                 return Color.White;
         }
 
+        private void lbBestScores_Click(object sender, EventArgs e)
+        {
+            CategoryStats = new ChooseGameCategory();
+            this.Hide();
+            CategoryStats.ShowDialog();
+        }
     }
 }

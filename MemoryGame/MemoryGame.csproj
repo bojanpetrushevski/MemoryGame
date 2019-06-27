@@ -54,6 +54,7 @@
     <Compile Include="BestScores.Designer.cs">
       <DependentUpon>BestScores.cs</DependentUpon>
     </Compile>
+    <Compile Include="BestScoresData.cs" />
     <Compile Include="BitmapComparator.cs" />
     <Compile Include="Card.cs" />
     <Compile Include="CardImages.cs" />
@@ -63,6 +64,12 @@
     </Compile>
     <Compile Include="ChooseGameCategory.Designer.cs">
       <DependentUpon>ChooseGameCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnterScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnterScore.Designer.cs">
+      <DependentUpon>EnterScore.cs</DependentUpon>
     </Compile>
     <Compile Include="Exit.cs">
       <SubType>Form</SubType>
@@ -97,6 +104,7 @@
       <DependentUpon>Scene.cs</DependentUpon>
     </Compile>
     <Compile Include="Score.cs" />
+    <Compile Include="ScoreValidation.cs" />
     <Compile Include="SingleplayerGame.cs" />
     <Compile Include="SingleplayerScene.cs">
       <SubType>Form</SubType>
@@ -109,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChooseGameCategory.resx">
       <DependentUpon>ChooseGameCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnterScore.resx">
+      <DependentUpon>EnterScore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Exit.resx">
       <DependentUpon>Exit.cs</DependentUpon>
@@ -198,6 +209,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sounds\correct_sound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sounds\select_sound.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sounds\select_sound.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

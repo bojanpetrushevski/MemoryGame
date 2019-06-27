@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MemoryGame.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,12 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace MemoryGame
 {
     public partial class SingleplayerScene : Scene
     {
         public SingleplayerGame Game { set; get; }
+        public System.Media.SoundPlayer SoundPlayer { set; get; }
+        public EnterScore EnterScore { set; get; }
         public SingleplayerScene(GameSettings gameSettings) : base(gameSettings)
         {
             InitializeComponent();
@@ -57,12 +61,16 @@ namespace MemoryGame
         {
             if (Game.Blocked)
                 return;
+            if (Settings.Sound)
+                PlaySound(Resources.select_sound);
             Game.OpenCard((PictureBox)sender);
             Pair pair = Game.CheckPair();
             if (pair == null)
                 return;
             if (pair.ValidPair)
             {
+                if(Settings.Sound)
+                    PlaySound(Resources.correct_sound);
                 Game.Hit(pair.Card1, pair.Card2);
                 Game.UpdateOpenCards();
                 Game.UpdatePairs();
@@ -70,14 +78,33 @@ namespace MemoryGame
                 if (Game.IsGameOver())
                 {
                     timer.Stop();
-                    MessageBox.Show("GAME OVER. YOU WIN!");
-                    //call new form
+                    CheckScore();
                 }
             }
             else
             {
                 Game.Miss(pair.Card1, pair.Card2);
             }
+        }
+        public void CheckScore()
+        {
+            SortedSet<Score> scores = null;
+            if (Settings.SelectedCategory.Columns == 4)
+                scores = BestScoresData.Best4x4;
+            if (Settings.SelectedCategory.Columns == 5)
+                scores = BestScoresData.Best4x5;
+            if (Settings.SelectedCategory.Columns == 6)
+                scores = BestScoresData.Best4x6;
+            if (ScoreValidation.ValidateScore(scores, Game.TimeElapsed))
+            {
+                EnterScore = new EnterScore(scores, Game.TimeElapsed);
+                EnterScore.ShowDialog();
+            }   
+        }
+        public void PlaySound(UnmanagedMemoryStream sound)
+        {
+            SoundPlayer = new System.Media.SoundPlayer(sound);
+            SoundPlayer.Play();
         }
         private void pb_MouseEnter(object sender, EventArgs e)
         {
@@ -100,7 +127,8 @@ namespace MemoryGame
                 timer.Stop();
                 Exit exitForm = new Exit(this);
                 exitForm.ShowDialog();
-                timer.Start();
+                if(!Game.IsGameOver())
+                    timer.Start();
             }
         }
         private void timer_Tick(object sender, EventArgs e)
