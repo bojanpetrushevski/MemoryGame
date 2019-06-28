@@ -12,12 +12,14 @@ namespace MemoryGame
     public class CardsCreator
     {
         public GameSettings Settings { set; get; }
-        public static Random Random = new Random();
+        public static Random Random = new Random(Guid.NewGuid().GetHashCode());
         public PictureBox[] ImageFrames { set; get; }
+        public Bitmap[] Images { set; get; }
         public CardsCreator(GameSettings gameSettings, PictureBox[] imageFrames)
         {
             Settings = gameSettings;
             ImageFrames = imageFrames;
+            Images = GetImages();
         }
         public List<Card> CreateCards()
         {
@@ -26,11 +28,20 @@ namespace MemoryGame
             {
                 SetImageFrame(ImageFrames[i], i);
                 int index = Random.Next(Settings.SelectedCategory.NumberOfCards - i);
-                Card c = new Card(CardImages.Images[index], ImageFrames[i], ImageFrames[i].Width, ImageFrames[i].Height);
+                Card c = new Card(Images[index], ImageFrames[i], ImageFrames[i].Width, ImageFrames[i].Height);
                 cards.Add(c);
                 Swap(index, i);
             }
             return cards;
+        }
+        public Bitmap[] GetImages()
+        {
+            Bitmap[] images = new Bitmap[Settings.SelectedCategory.NumberOfCards];
+            for(int i = 0; i < Settings.SelectedCategory.NumberOfCards; i++)
+            {
+                images[i] = CardImages.Images[i];
+            }
+            return images;
         }
         public void SetImageFrame(PictureBox ImageFrame, int position)
         {
@@ -45,9 +56,9 @@ namespace MemoryGame
         }
         public void Swap(int position, int offset)
         {
-            Bitmap temp = CardImages.Images[position];
-            CardImages.Images[position] = CardImages.Images[Settings.SelectedCategory.NumberOfCards - offset - 1];
-            CardImages.Images[Settings.SelectedCategory.NumberOfCards - offset - 1] = temp;
+            Bitmap temp = Images[position];
+            Images[position] = Images[Settings.SelectedCategory.NumberOfCards - offset - 1];
+            Images[Settings.SelectedCategory.NumberOfCards - offset - 1] = temp;
         }
     }
 }
