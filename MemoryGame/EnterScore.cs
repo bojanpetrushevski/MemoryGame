@@ -41,7 +41,7 @@ namespace MemoryGame
         {
             string name = tbName.Text;
             int time = ParseTime(tbTime.Text);
-            Score s = new Score(new Player(name), time);
+            Score s = new Score(new Player(name, 0, 0), time);
             AddScore(s);
             this.Close();
         }

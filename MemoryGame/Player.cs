@@ -9,9 +9,13 @@ namespace MemoryGame
     public class Player
     {
         public string Name { set; get; }
-        public Player(string name)
+        public int Pairs { set; get; }
+        public int ElapsedTime { set; get; }
+        public Player(string name, int pairs, int elapsedTime)
         {
             Name = name;
+            Pairs = pairs;
+            ElapsedTime = elapsedTime;
         }
     }
 }

@@ -11,9 +11,9 @@ namespace MemoryGame
     {
         public void WriteToFile()
         {
-            WriteData(@"C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\scores\best4x4.txt", BestScoresData.Best4x4);
-            WriteData(@"C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\scores\best4x5.txt", BestScoresData.Best4x5);
-            WriteData(@"C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\scores\best4x6.txt", BestScoresData.Best4x6);
+            WriteData(@"..\..\scores\best4x4.txt", BestScoresData.Best4x4);
+            WriteData(@"..\..\scores\best4x5.txt", BestScoresData.Best4x5);
+            WriteData(@"..\..\scores\best4x6.txt", BestScoresData.Best4x6);
         }
         public void WriteData(string path, SortedSet<Score> scores)
         {

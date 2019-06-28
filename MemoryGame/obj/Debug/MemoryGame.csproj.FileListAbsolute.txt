@@ -15,3 +15,4 @@ C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\obj\Debug\
 C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\obj\Debug\MemoryGame.pdb
 C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\obj\Debug\MemoryGame.csprojAssemblyReference.cache
 C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\obj\Debug\MemoryGame.EnterScore.resources
+C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\obj\Debug\MemoryGame.MultiplayerScene.resources

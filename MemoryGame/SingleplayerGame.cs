@@ -8,20 +8,18 @@ namespace MemoryGame
 {
     public class SingleplayerGame : Game
     {
-        public int TimeElapsed { set; get; }
-        public int Pairs { set; get; }
+        public Player Player { set; get; }
         public SingleplayerGame(List<Card> cards) : base(cards)
         {
-            TimeElapsed = 0;
-            Pairs = 0;
+            Player = new Player("", 0, 0);
         }
         public void UpdateTime()
         {
-            TimeElapsed++;
+            Player.ElapsedTime++;
         }
         public void UpdatePairs()
         {
-            Pairs++;
+            Player.Pairs++;
         }
     }
 }

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MemoryGame
 {
@@ -12,9 +13,9 @@ namespace MemoryGame
         public void ReadFromFile()
         {
             DataReader dataReader = new DataReader();
-            dataReader.ReadData(@"C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\scores\best4x4.txt", BestScoresData.Best4x4);
-            dataReader.ReadData(@"C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\scores\best4x5.txt", BestScoresData.Best4x5);
-            dataReader.ReadData(@"C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\scores\best4x6.txt", BestScoresData.Best4x6);
+            dataReader.ReadData(@"..\..\scores\best4x4.txt", BestScoresData.Best4x4);
+            dataReader.ReadData(@"..\..\scores\best4x5.txt", BestScoresData.Best4x5);
+            dataReader.ReadData(@"..\..\scores\best4x6.txt", BestScoresData.Best4x6);
         }
         public SortedSet<Score> ReadData(string path, SortedSet<Score> scores)
         {
@@ -27,7 +28,7 @@ namespace MemoryGame
                 string name = parts[0];
                 string date = parts[1];
                 string time = parts[2];
-                Player player = new Player(name);
+                Player player = new Player(name, 0, 0);
                 DateTime dateTime = ParseDate(date);
                 int finishedTime = ParseFinishedTime(time);
                 scores.Add(new Score(player, finishedTime, dateTime)).ToString();

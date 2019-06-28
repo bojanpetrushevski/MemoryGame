@@ -62,7 +62,7 @@
             this.pnStats.Controls.Add(this.lbTimeElapsed);
             this.pnStats.Controls.Add(this.pictureBox1);
             this.pnStats.Controls.Add(this.pictureBox2);
-            this.pnStats.Location = new System.Drawing.Point(90, 680);
+            this.pnStats.Location = new System.Drawing.Point(107, 673);
             this.pnStats.Name = "pnStats";
             this.pnStats.Size = new System.Drawing.Size(602, 119);
             this.pnStats.TabIndex = 1;
@@ -74,9 +74,8 @@
             this.lbPairs.ForeColor = System.Drawing.Color.White;
             this.lbPairs.Location = new System.Drawing.Point(476, 46);
             this.lbPairs.Name = "lbPairs";
-            this.lbPairs.Size = new System.Drawing.Size(97, 46);
+            this.lbPairs.Size = new System.Drawing.Size(0, 46);
             this.lbPairs.TabIndex = 2;
-            this.lbPairs.Text = "2/12";
             // 
             // lbTimeElapsed
             // 
@@ -85,9 +84,8 @@
             this.lbTimeElapsed.ForeColor = System.Drawing.Color.White;
             this.lbTimeElapsed.Location = new System.Drawing.Point(180, 46);
             this.lbTimeElapsed.Name = "lbTimeElapsed";
-            this.lbTimeElapsed.Size = new System.Drawing.Size(130, 46);
+            this.lbTimeElapsed.Size = new System.Drawing.Size(0, 46);
             this.lbTimeElapsed.TabIndex = 1;
-            this.lbTimeElapsed.Text = "02: 12";
             // 
             // pictureBox2
             // 

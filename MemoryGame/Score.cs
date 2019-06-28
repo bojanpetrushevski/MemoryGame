@@ -28,10 +28,8 @@ namespace MemoryGame
         {
             if (FinishedTime < s.FinishedTime)
                 return -1;
-            if (FinishedTime > s.FinishedTime)
-                return 1;
             else
-                return 0;
+                return 1;
         }
         public new string ToString()
         {

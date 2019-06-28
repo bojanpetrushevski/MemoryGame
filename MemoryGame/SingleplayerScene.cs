@@ -45,7 +45,6 @@ namespace MemoryGame
                 this.Controls.Add(Boxes[i]);
             }
             AddPicutreBoxesEventHandlers(Boxes);
-
             return Boxes;
         }
         public void AddPicutreBoxesEventHandlers(PictureBox[] Frames)
@@ -95,9 +94,9 @@ namespace MemoryGame
                 scores = BestScoresData.Best4x5;
             if (Settings.SelectedCategory.Columns == 6)
                 scores = BestScoresData.Best4x6;
-            if (ScoreValidation.ValidateScore(scores, Game.TimeElapsed))
+            if (ScoreValidation.ValidateScore(scores, Game.Player.ElapsedTime))
             {
-                EnterScore = new EnterScore(scores, Game.TimeElapsed);
+                EnterScore = new EnterScore(scores, Game.Player.ElapsedTime);
                 EnterScore.ShowDialog();
             }   
         }
@@ -141,10 +140,10 @@ namespace MemoryGame
 
         private void SingleplayerScene_Paint(object sender, PaintEventArgs e)
         {
-            int minutes = Game.TimeElapsed / 60;
-            int seconds = Game.TimeElapsed % 60;
+            int minutes = Game.Player.ElapsedTime / 60;
+            int seconds = Game.Player.ElapsedTime % 60;
             lbTimeElapsed.Text = String.Format("{0:00}:{1:00}", minutes, seconds);
-            lbPairs.Text = String.Format("{0}/{1}", Game.Pairs, Game.Cards.Count / 2);
+            lbPairs.Text = String.Format("{0}/{1}", Game.Player.Pairs, Game.Cards.Count / 2);
         }
 
         private void pbBackArrow_Click(object sender, EventArgs e)

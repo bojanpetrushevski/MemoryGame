@@ -89,6 +89,14 @@
     <Compile Include="GameCategory.cs" />
     <Compile Include="GameMode.cs" />
     <Compile Include="GameSettings.cs" />
+    <Compile Include="MultiplayerGame.cs" />
+    <Compile Include="MultiplayerPlayer.cs" />
+    <Compile Include="MultiplayerScene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultiplayerScene.Designer.cs">
+      <DependentUpon>MultiplayerScene.cs</DependentUpon>
+    </Compile>
     <Compile Include="Options.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultiplayerScene.resx">
+      <DependentUpon>MultiplayerScene.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Options.resx">
       <DependentUpon>Options.cs</DependentUpon>
