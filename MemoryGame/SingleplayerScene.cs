@@ -60,9 +60,9 @@ namespace MemoryGame
         {
             if (Game.Blocked)
                 return;
-            if (Settings.Sound)
-                PlaySound(Resources.select_sound);
-            Game.OpenCard((PictureBox)sender);
+            if(Game.OpenCard((PictureBox)sender))
+                if (Settings.Sound)
+                    PlaySound(Resources.select_sound);
             Pair pair = Game.CheckPair();
             if (pair == null)
                 return;

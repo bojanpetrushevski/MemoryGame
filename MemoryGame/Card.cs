@@ -37,7 +37,7 @@ namespace MemoryGame
         /// Toggles the card.
         /// If it is already paired (paired cards cannot be flipped), this method has no effect. 
         /// </summary>
-        public void Toggle()
+        public bool Toggle()
         {
             if (!Paired)
             {
@@ -52,7 +52,9 @@ namespace MemoryGame
                     ImageFrame.BackColor = CurrentColor;
                 }
                 IsOpen = !IsOpen;
+                return true;
             }
+            return false;
         }
         public void MarkPaired()
         {

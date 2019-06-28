@@ -215,7 +215,6 @@ namespace MemoryGame
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            MessageBox.Show("Closing...");
             DataWriter writer = new DataWriter();
             writer.WriteToFile();
         }

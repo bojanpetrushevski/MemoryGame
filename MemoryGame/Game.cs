@@ -18,12 +18,13 @@ namespace MemoryGame
             Blocked = false;
             OpenCards = 0;
         }
-        public void OpenCard(PictureBox clickedFrame)
+        public bool OpenCard(PictureBox clickedFrame)
         {
             foreach (Card c in Cards)
                 if(!c.IsOpen)
                     if (c.ImageFrame == clickedFrame)
-                        c.Toggle();   
+                        return c.Toggle();
+            return false;
         }
         public Pair CheckPair()
         {
