@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EnterNames));
             this.lbEnterYourNamesTitle = new System.Windows.Forms.Label();
             this.lbPlayer1Name = new System.Windows.Forms.Label();
             this.lbPlayer2Name = new System.Windows.Forms.Label();
             this.tbPlayer1Name = new System.Windows.Forms.TextBox();
             this.tbPlayer2Name = new System.Windows.Forms.TextBox();
             this.lbStart = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // lbEnterYourNamesTitle
@@ -100,6 +104,13 @@
             this.lbStart.TabIndex = 5;
             this.lbStart.Text = "Start";
             this.lbStart.Click += new System.EventHandler(this.lbStart_Click);
+            this.lbStart.MouseEnter += new System.EventHandler(this.lbStart_MouseEnter);
+            this.lbStart.MouseLeave += new System.EventHandler(this.lbStart_MouseLeave);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
             // 
             // EnterNames
             // 
@@ -119,6 +130,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "EnterNames";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,5 +144,6 @@
         private System.Windows.Forms.TextBox tbPlayer1Name;
         private System.Windows.Forms.TextBox tbPlayer2Name;
         private System.Windows.Forms.Label lbStart;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

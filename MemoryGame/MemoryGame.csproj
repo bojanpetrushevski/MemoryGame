@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackToMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackToMainMenu.Designer.cs">
+      <DependentUpon>BackToMainMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="BestScores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,12 @@
       <DependentUpon>Options.cs</DependentUpon>
     </Compile>
     <Compile Include="Pair.cs" />
+    <Compile Include="PlayAgain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayAgain.Designer.cs">
+      <DependentUpon>PlayAgain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -133,6 +145,9 @@
     <Compile Include="SingleplayerScene.Designer.cs">
       <DependentUpon>SingleplayerScene.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BackToMainMenu.resx">
+      <DependentUpon>BackToMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BestScores.resx">
       <DependentUpon>BestScores.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Options.resx">
       <DependentUpon>Options.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayAgain.resx">
+      <DependentUpon>PlayAgain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

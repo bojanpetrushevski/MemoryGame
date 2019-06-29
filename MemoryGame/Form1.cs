@@ -209,7 +209,6 @@ namespace MemoryGame
             CategoryStats = new ChooseGameCategory(this);
             CategoryStats.ShowDialog();
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             BestScoresData data = new BestScoresData();

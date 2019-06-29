@@ -117,6 +117,8 @@
             this.pbBackArrow.TabIndex = 5;
             this.pbBackArrow.TabStop = false;
             this.pbBackArrow.Click += new System.EventHandler(this.pbBackArrow_Click);
+            this.pbBackArrow.MouseEnter += new System.EventHandler(this.pbBackArrow_MouseEnter);
+            this.pbBackArrow.MouseLeave += new System.EventHandler(this.pbBackArrow_MouseLeave);
             // 
             // lbGameCateogry
             // 
@@ -124,11 +126,11 @@
             this.lbGameCateogry.BackColor = System.Drawing.Color.Transparent;
             this.lbGameCateogry.Font = new System.Drawing.Font("Microsoft Sans Serif", 29.8F);
             this.lbGameCateogry.ForeColor = System.Drawing.Color.White;
-            this.lbGameCateogry.Location = new System.Drawing.Point(424, 89);
+            this.lbGameCateogry.Location = new System.Drawing.Point(549, 89);
             this.lbGameCateogry.Name = "lbGameCateogry";
-            this.lbGameCateogry.Size = new System.Drawing.Size(368, 58);
+            this.lbGameCateogry.Size = new System.Drawing.Size(132, 58);
             this.lbGameCateogry.TabIndex = 6;
-            this.lbGameCateogry.Text = "Game category";
+            this.lbGameCateogry.Text = "4 x 4";
             // 
             // lb1
             // 

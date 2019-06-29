@@ -62,6 +62,8 @@
             this.pbBackArrow.TabIndex = 5;
             this.pbBackArrow.TabStop = false;
             this.pbBackArrow.Click += new System.EventHandler(this.pbBackArrow_Click);
+            this.pbBackArrow.MouseEnter += new System.EventHandler(this.pbBackArrow_MouseEnter);
+            this.pbBackArrow.MouseLeave += new System.EventHandler(this.pbBackArrow_MouseLeave);
             // 
             // lbMultiplayerModeTitle
             // 
@@ -195,8 +197,7 @@
             this.pnGameStats.Location = new System.Drawing.Point(0, 346);
             this.pnGameStats.Name = "pnGameStats";
             this.pnGameStats.Size = new System.Drawing.Size(856, 212);
-            this.pnGameStats.TabIndex = 0;
-            this.pnGameStats.Paint += new System.Windows.Forms.PaintEventHandler(this.pnGameStats_Paint);
+            this.pnGameStats.TabIndex = 0;           
             // 
             // MultiplayerScene
             // 

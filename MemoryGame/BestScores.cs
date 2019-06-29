@@ -19,13 +19,18 @@ namespace MemoryGame
             InitializeComponent();
             MainForm = mainForm;
         }
-        public static void CreateBestScores(Form1 mainForm)
+        public static void CreateBestScores(Form1 mainForm, string title)
         {
             BestScoresInstance = new BestScores(mainForm);
+            SetTitle(title);
         }
         public static void ShowBestScores()
         {
-            BestScoresInstance.Show();          
+            BestScoresInstance.Show();
+        }
+        public static void SetTitle(string title)
+        {
+            BestScoresInstance.lbGameCateogry.Text = title;
         }
         public static void ShowData(SortedSet<Score> scores)
         {
@@ -70,6 +75,16 @@ namespace MemoryGame
             ClearData();
             ChooseGameCategory chooseGameCategory = new ChooseGameCategory(MainForm);
             chooseGameCategory.ShowDialog();
+        }
+
+        private void pbBackArrow_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void pbBackArrow_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
         }
     }
 }

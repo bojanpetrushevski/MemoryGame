@@ -18,3 +18,5 @@ C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\obj\Debug\
 C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\obj\Debug\MemoryGame.MultiplayerScene.resources
 C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\obj\Debug\MemoryGame.EnterNames.resources
 C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\obj\Debug\MemoryGame.ErrorMessage.resources
+C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\obj\Debug\MemoryGame.PlayAgain.resources
+C:\Users\Bojan\source\repos\VP PROEKTNA ZADACHA\MemoryGame\MemoryGame\obj\Debug\MemoryGame.BackToMainMenu.resources

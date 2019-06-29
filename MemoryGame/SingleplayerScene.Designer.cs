@@ -127,6 +127,8 @@
             this.pbBackArrow.TabIndex = 4;
             this.pbBackArrow.TabStop = false;
             this.pbBackArrow.Click += new System.EventHandler(this.pbBackArrow_Click);
+            this.pbBackArrow.MouseEnter += new System.EventHandler(this.pbBackArrow_MouseEnter);
+            this.pbBackArrow.MouseLeave += new System.EventHandler(this.pbBackArrow_MouseLeave);
             // 
             // SingleplayerScene
             // 

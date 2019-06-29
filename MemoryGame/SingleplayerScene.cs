@@ -9,17 +9,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Media;
 
 namespace MemoryGame
 {
     public partial class SingleplayerScene : Scene
     {
         public SingleplayerGame Game { set; get; }
+        public PictureBox[] Frames { set; get; }
         public EnterScore EnterScore { set; get; }
         public SingleplayerScene(GameSettings gameSettings, Form1 caller) : base(gameSettings, caller)
         {
             InitializeComponent();
             SetScene();
+            InitializeGame();
         }
         public SingleplayerScene() : base()
         {
@@ -27,11 +30,21 @@ namespace MemoryGame
         }
         public void SetScene()
         {
-            PictureBox[] frames = CreateImageFrames();
-            Creator = new CardsCreator(Settings, frames);
-            Game = new SingleplayerGame(Creator.CreateCards());
-            SetControls();
+            Frames = CreateImageFrames();
         }
+        public void InitializeGame()
+        {
+            NewGame();
+            SetControls();
+            UpdateStats();
+            StartTimer();
+        }
+        public void NewGame()
+        {
+            Creator = new CardsCreator(Settings, Frames);
+            Game = new SingleplayerGame(Creator.CreateCards());
+        }
+       
         public void SetControls()
         {
             this.Width = Settings.Width;
@@ -79,7 +92,7 @@ namespace MemoryGame
                 UpdateStats();
                 if (Game.IsGameOver())
                 {
-                    timer.Stop();
+                    StopTimer();
                     CheckScore();
                 }
             }
@@ -88,8 +101,17 @@ namespace MemoryGame
                 Game.Miss(pair.Card1, pair.Card2);
             }
         }
+        public void StartTimer()
+        {
+            timer.Start();
+        }
+        public void StopTimer()
+        {
+            timer.Stop();
+        }
         public void CheckScore()
         {
+            string message = null;
             SortedSet<Score> scores = null;
             if (Settings.SelectedCategory.Columns == 4)
                 scores = BestScoresData.Best4x4;
@@ -101,11 +123,22 @@ namespace MemoryGame
             {
                 EnterScore = new EnterScore(scores, Game.Player.ElapsedTime);
                 EnterScore.ShowDialog();
-            }   
+                message = "Congarts, your score has been recorded in best scores";
+            }
+            else
+            {
+                message = "Sorry, not good enough for best scores";
+            }
+            PlayAgain(message);
+        }
+        public void PlayAgain(string message)
+        {
+            PlayAgain playAgain = new PlayAgain(this, Caller, message);
+            playAgain.ShowDialog();
         }
         public void PlaySound(UnmanagedMemoryStream sound)
         {
-            SoundPlayer = new System.Media.SoundPlayer(sound);
+            SoundPlayer = new SoundPlayer(sound);
             SoundPlayer.Play();
         }
         private void pb_MouseEnter(object sender, EventArgs e)
@@ -151,8 +184,19 @@ namespace MemoryGame
 
         private void pbBackArrow_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            Caller.Show();
+            StopTimer();
+            BackToMainMenu backToMainMenu = new BackToMainMenu(this, Caller);
+            backToMainMenu.ShowDialog();
+        }
+
+        private void pbBackArrow_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void pbBackArrow_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
         }
     }
 }

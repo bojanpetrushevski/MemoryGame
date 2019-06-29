@@ -15,6 +15,7 @@ namespace MemoryGame
     public partial class MultiplayerScene : Scene
     {
         public MultiplayerGame Game { set; get; }
+        public PictureBox[] Frames { set; get; }
         public MultiplayerScene(GameSettings gameSettings, Form1 caller) : base(gameSettings, caller)
         {
             InitializeComponent();
@@ -26,11 +27,13 @@ namespace MemoryGame
         }
         public void SetScene()
         {
-            PictureBox[] frames = CreateImageFrames();
-            Creator = new CardsCreator(Settings, frames);
-            Game = new MultiplayerGame(Creator.CreateCards());
+            Frames = CreateImageFrames();
             EnterNames();
-            SetControls();
+        }
+        public void NewGame()
+        {
+            Creator = new CardsCreator(Settings, Frames);
+            Game = new MultiplayerGame(Creator.CreateCards());
         }
         public void SetControls()
         {
@@ -42,11 +45,13 @@ namespace MemoryGame
             lbPlayer1Name.Location = new Point((pnPlayer1.Width - lbPlayer1Name.Width) / 2, 20);
             lbPlayer2Name.Location = new Point((pnPlayer2.Width - lbPlayer2Name.Width) / 2, 20);
         }
-        public void InitializePlayers(string player1Name, string player2Name)
+        public void InitializeGame(string player1Name, string player2Name)
         {
+            NewGame();
             Game.CreatePlayers(player1Name, player2Name);
             ShowPlayersNames();
             ToggleFingerImage();
+            SetControls();
         }
         public void ShowPlayersNames()
         {
@@ -99,10 +104,17 @@ namespace MemoryGame
                 if (Game.IsGameOver())
                 {
                     Player winner = GetWinner();
+                    string message = null;
                     if (winner != null)
-                        MessageBox.Show("Game over. Winner is" + winner.Name);
+                    {
+                        message = String.Format("{0} won the game.", winner.Name);
+                    }
                     else
-                        MessageBox.Show("Game over. It is draw");
+                    {
+                        message = String.Format("It is draw.");
+                    }
+                    DeleteFingerImage();
+                    PlayAgain(message);
                 }
             }
             else
@@ -112,6 +124,10 @@ namespace MemoryGame
                 Game.ChangeTurn();
             }
         }
+        public void DeleteFingerImage()
+        {
+            pbFinger.Image = null;
+        }
         public Player GetWinner()
         {
             if (Game.Player1.Pairs > Game.Player2.Pairs)
@@ -120,6 +136,11 @@ namespace MemoryGame
                 return Game.Player2;
             else
                 return null;
+        }
+        public void PlayAgain(string message)
+        {
+            PlayAgain playAgain = new PlayAgain(this, Caller, message);
+            playAgain.ShowDialog();
         }
         public void ToggleFingerImage()
         {
@@ -170,14 +191,20 @@ namespace MemoryGame
             lbPlayer1Pairs.Text = Game.Player1.Pairs.ToString();
             lbPlayer2Pairs.Text = Game.Player2.Pairs.ToString();
         }
-        private void pnGameStats_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         private void pbBackArrow_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            Caller.Show();
+            BackToMainMenu backToMainMenu = new BackToMainMenu(this, Caller);
+            backToMainMenu.ShowDialog();
+        }
+
+        private void pbBackArrow_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void pbBackArrow_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
         }
     }
 }

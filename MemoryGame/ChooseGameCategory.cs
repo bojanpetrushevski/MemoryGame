@@ -57,7 +57,7 @@ namespace MemoryGame
         private void lb4x4_Click(object sender, EventArgs e)
         {
             this.Hide();
-            BestScores.CreateBestScores(Caller);
+            BestScores.CreateBestScores(Caller, "4 x 4");
             BestScores.ShowData(BestScoresData.Best4x4);
             BestScores.ShowBestScores();
         }
@@ -65,7 +65,7 @@ namespace MemoryGame
         private void lb4x5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            BestScores.CreateBestScores(Caller);
+            BestScores.CreateBestScores(Caller, "4 x 5");
             BestScores.ShowData(BestScoresData.Best4x5);
             BestScores.ShowBestScores();
         }
@@ -73,7 +73,7 @@ namespace MemoryGame
         private void lb4x6_Click(object sender, EventArgs e)
         {
             this.Hide();
-            BestScores.CreateBestScores(Caller);
+            BestScores.CreateBestScores(Caller, "4 x 6");
             BestScores.ShowData(BestScoresData.Best4x6);
             BestScores.ShowBestScores();
         }
@@ -82,6 +82,16 @@ namespace MemoryGame
         {
             this.Dispose();
             Caller.Show();
+        }
+
+        private void pbBackArrow_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void pbBackArrow_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
         }
     }
 }

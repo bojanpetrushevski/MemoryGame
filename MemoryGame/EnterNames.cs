@@ -21,18 +21,52 @@ namespace MemoryGame
 
         private void lbStart_Click(object sender, EventArgs e)
         {
-            if(tbPlayer1Name.Text.Trim().Length == 0 || tbPlayer2Name.Text.Trim().Length == 0)
+            if(CheckError())
             {
-                ErrorMessage errorMessage = new ErrorMessage();
-                errorMessage.ShowDialog();
+                SetError();
             }
             else
             {
                 string player1Name = tbPlayer1Name.Text;
                 string player2Name = tbPlayer2Name.Text;
-                Caller.InitializePlayers(player1Name, player2Name);
+                Caller.InitializeGame(player1Name, player2Name);
                 this.Dispose();
             }
+        }
+        public void SetError()
+        {
+            if (tbPlayer1Name.Text.Trim().Length == 0)
+            {
+                errorProvider.SetError(tbPlayer1Name, "Enter your name");
+                return;
+            }
+            else
+            {
+                errorProvider.SetError(tbPlayer1Name, "");
+            }
+            if (tbPlayer2Name.Text.Trim().Length == 0)
+            {
+                errorProvider.SetError(tbPlayer2Name, "Enter your name");
+            }
+            else
+            {
+                errorProvider.SetError(tbPlayer2Name, "");
+            }
+        }
+        public bool CheckError()
+        {
+            return tbPlayer1Name.Text.Trim().Length == 0 || tbPlayer2Name.Text.Trim().Length == 0;
+        }
+        private void lbStart_MouseEnter(object sender, EventArgs e)
+        {
+            lbStart.ForeColor = Color.Yellow;
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void lbStart_MouseLeave(object sender, EventArgs e)
+        {
+            lbStart.ForeColor = Color.White;
+            this.Cursor = Cursors.Default;
         }
     }
 }
