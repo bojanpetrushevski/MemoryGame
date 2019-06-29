@@ -30,20 +30,25 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MultiplayerScene));
             this.pbBackArrow = new System.Windows.Forms.PictureBox();
-            this.lbSingleplayerModeTitle = new System.Windows.Forms.Label();
-            this.pnStats = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbPairs = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbMultiplayerModeTitle = new System.Windows.Forms.Label();
+            this.pnPlayer1 = new System.Windows.Forms.Panel();
+            this.lbPlayer1Name = new System.Windows.Forms.Label();
+            this.lbPlayer1Pairs = new System.Windows.Forms.Label();
+            this.pbPlayer1Pairs = new System.Windows.Forms.PictureBox();
+            this.pnPlayer2 = new System.Windows.Forms.Panel();
+            this.lbPlayer2Name = new System.Windows.Forms.Label();
+            this.lbPlayer2Pairs = new System.Windows.Forms.Label();
+            this.pbPlayer2Pairs = new System.Windows.Forms.PictureBox();
+            this.pbFinger = new System.Windows.Forms.PictureBox();
+            this.lbOnTurn = new System.Windows.Forms.Label();
+            this.pnGameStats = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pbBackArrow)).BeginInit();
-            this.pnStats.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnPlayer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer1Pairs)).BeginInit();
+            this.pnPlayer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer2Pairs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFinger)).BeginInit();
+            this.pnGameStats.SuspendLayout();
             this.SuspendLayout();
             // 
             // pbBackArrow
@@ -56,128 +61,164 @@
             this.pbBackArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbBackArrow.TabIndex = 5;
             this.pbBackArrow.TabStop = false;
+            this.pbBackArrow.Click += new System.EventHandler(this.pbBackArrow_Click);
             // 
-            // lbSingleplayerModeTitle
+            // lbMultiplayerModeTitle
             // 
-            this.lbSingleplayerModeTitle.AutoSize = true;
-            this.lbSingleplayerModeTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lbSingleplayerModeTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 29.8F);
-            this.lbSingleplayerModeTitle.ForeColor = System.Drawing.Color.White;
-            this.lbSingleplayerModeTitle.Location = new System.Drawing.Point(190, 26);
-            this.lbSingleplayerModeTitle.Name = "lbSingleplayerModeTitle";
-            this.lbSingleplayerModeTitle.Size = new System.Drawing.Size(407, 58);
-            this.lbSingleplayerModeTitle.TabIndex = 6;
-            this.lbSingleplayerModeTitle.Text = "Multiplayer mode";
+            this.lbMultiplayerModeTitle.AutoSize = true;
+            this.lbMultiplayerModeTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lbMultiplayerModeTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 29.8F);
+            this.lbMultiplayerModeTitle.ForeColor = System.Drawing.Color.White;
+            this.lbMultiplayerModeTitle.Location = new System.Drawing.Point(239, 26);
+            this.lbMultiplayerModeTitle.Name = "lbMultiplayerModeTitle";
+            this.lbMultiplayerModeTitle.Size = new System.Drawing.Size(407, 58);
+            this.lbMultiplayerModeTitle.TabIndex = 6;
+            this.lbMultiplayerModeTitle.Text = "Multiplayer mode";
             // 
-            // pnStats
+            // pnPlayer1
             // 
-            this.pnStats.BackColor = System.Drawing.Color.Transparent;
-            this.pnStats.Controls.Add(this.label1);
-            this.pnStats.Controls.Add(this.lbPairs);
-            this.pnStats.Controls.Add(this.pictureBox2);
-            this.pnStats.Location = new System.Drawing.Point(40, 310);
-            this.pnStats.Name = "pnStats";
-            this.pnStats.Size = new System.Drawing.Size(252, 185);
-            this.pnStats.TabIndex = 7;
+            this.pnPlayer1.BackColor = System.Drawing.Color.Transparent;
+            this.pnPlayer1.Controls.Add(this.lbPlayer1Name);
+            this.pnPlayer1.Controls.Add(this.lbPlayer1Pairs);
+            this.pnPlayer1.Controls.Add(this.pbPlayer1Pairs);
+            this.pnPlayer1.Location = new System.Drawing.Point(3, 3);
+            this.pnPlayer1.Name = "pnPlayer1";
+            this.pnPlayer1.Size = new System.Drawing.Size(294, 185);
+            this.pnPlayer1.TabIndex = 7;
             // 
-            // label1
+            // lbPlayer1Name
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.8F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(80, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 46);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Name";
+            this.lbPlayer1Name.AutoSize = true;
+            this.lbPlayer1Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.8F);
+            this.lbPlayer1Name.ForeColor = System.Drawing.Color.White;
+            this.lbPlayer1Name.Location = new System.Drawing.Point(40, 19);
+            this.lbPlayer1Name.Name = "lbPlayer1Name";
+            this.lbPlayer1Name.Size = new System.Drawing.Size(126, 46);
+            this.lbPlayer1Name.TabIndex = 5;
+            this.lbPlayer1Name.Text = "Name";
             // 
-            // lbPairs
+            // lbPlayer1Pairs
             // 
-            this.lbPairs.AutoSize = true;
-            this.lbPairs.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.8F);
-            this.lbPairs.ForeColor = System.Drawing.Color.White;
-            this.lbPairs.Location = new System.Drawing.Point(129, 106);
-            this.lbPairs.Name = "lbPairs";
-            this.lbPairs.Size = new System.Drawing.Size(97, 46);
-            this.lbPairs.TabIndex = 2;
-            this.lbPairs.Text = "2/12";
+            this.lbPlayer1Pairs.AutoSize = true;
+            this.lbPlayer1Pairs.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.8F);
+            this.lbPlayer1Pairs.ForeColor = System.Drawing.Color.White;
+            this.lbPlayer1Pairs.Location = new System.Drawing.Point(186, 115);
+            this.lbPlayer1Pairs.Name = "lbPlayer1Pairs";
+            this.lbPlayer1Pairs.Size = new System.Drawing.Size(42, 46);
+            this.lbPlayer1Pairs.TabIndex = 2;
+            this.lbPlayer1Pairs.Text = "2";
             // 
-            // pictureBox2
+            // pbPlayer1Pairs
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::MemoryGame.Properties.Resources._checked;
-            this.pictureBox2.Location = new System.Drawing.Point(26, 87);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(85, 95);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
+            this.pbPlayer1Pairs.BackColor = System.Drawing.Color.Transparent;
+            this.pbPlayer1Pairs.Image = global::MemoryGame.Properties.Resources._checked;
+            this.pbPlayer1Pairs.Location = new System.Drawing.Point(48, 87);
+            this.pbPlayer1Pairs.Name = "pbPlayer1Pairs";
+            this.pbPlayer1Pairs.Size = new System.Drawing.Size(85, 95);
+            this.pbPlayer1Pairs.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbPlayer1Pairs.TabIndex = 4;
+            this.pbPlayer1Pairs.TabStop = false;
             // 
-            // panel1
+            // pnPlayer2
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(493, 310);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(270, 185);
-            this.panel1.TabIndex = 8;
+            this.pnPlayer2.BackColor = System.Drawing.Color.Transparent;
+            this.pnPlayer2.Controls.Add(this.lbPlayer2Name);
+            this.pnPlayer2.Controls.Add(this.lbPlayer2Pairs);
+            this.pnPlayer2.Controls.Add(this.pbPlayer2Pairs);
+            this.pnPlayer2.Location = new System.Drawing.Point(559, 3);
+            this.pnPlayer2.Name = "pnPlayer2";
+            this.pnPlayer2.Size = new System.Drawing.Size(294, 185);
+            this.pnPlayer2.TabIndex = 8;
             // 
-            // label2
+            // lbPlayer2Name
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.8F);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(80, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 46);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Name";
+            this.lbPlayer2Name.AutoSize = true;
+            this.lbPlayer2Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.8F);
+            this.lbPlayer2Name.ForeColor = System.Drawing.Color.White;
+            this.lbPlayer2Name.Location = new System.Drawing.Point(91, 19);
+            this.lbPlayer2Name.Name = "lbPlayer2Name";
+            this.lbPlayer2Name.Size = new System.Drawing.Size(126, 46);
+            this.lbPlayer2Name.TabIndex = 5;
+            this.lbPlayer2Name.Text = "Name";
             // 
-            // label3
+            // lbPlayer2Pairs
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.8F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(152, 106);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 46);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "2/12";
+            this.lbPlayer2Pairs.AutoSize = true;
+            this.lbPlayer2Pairs.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.8F);
+            this.lbPlayer2Pairs.ForeColor = System.Drawing.Color.White;
+            this.lbPlayer2Pairs.Location = new System.Drawing.Point(82, 115);
+            this.lbPlayer2Pairs.Name = "lbPlayer2Pairs";
+            this.lbPlayer2Pairs.Size = new System.Drawing.Size(42, 46);
+            this.lbPlayer2Pairs.TabIndex = 2;
+            this.lbPlayer2Pairs.Text = "3";
             // 
-            // pictureBox1
+            // pbPlayer2Pairs
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::MemoryGame.Properties.Resources._checked;
-            this.pictureBox1.Location = new System.Drawing.Point(26, 87);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(85, 95);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.pbPlayer2Pairs.BackColor = System.Drawing.Color.Transparent;
+            this.pbPlayer2Pairs.Image = global::MemoryGame.Properties.Resources._checked;
+            this.pbPlayer2Pairs.Location = new System.Drawing.Point(171, 87);
+            this.pbPlayer2Pairs.Name = "pbPlayer2Pairs";
+            this.pbPlayer2Pairs.Size = new System.Drawing.Size(85, 95);
+            this.pbPlayer2Pairs.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbPlayer2Pairs.TabIndex = 4;
+            this.pbPlayer2Pairs.TabStop = false;
+            // 
+            // pbFinger
+            // 
+            this.pbFinger.BackColor = System.Drawing.Color.Transparent;
+            this.pbFinger.Location = new System.Drawing.Point(363, 90);
+            this.pbFinger.Name = "pbFinger";
+            this.pbFinger.Size = new System.Drawing.Size(140, 99);
+            this.pbFinger.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbFinger.TabIndex = 9;
+            this.pbFinger.TabStop = false;
+            // 
+            // lbOnTurn
+            // 
+            this.lbOnTurn.AutoSize = true;
+            this.lbOnTurn.BackColor = System.Drawing.Color.Transparent;
+            this.lbOnTurn.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.8F);
+            this.lbOnTurn.ForeColor = System.Drawing.Color.White;
+            this.lbOnTurn.Location = new System.Drawing.Point(341, 22);
+            this.lbOnTurn.Name = "lbOnTurn";
+            this.lbOnTurn.Size = new System.Drawing.Size(183, 46);
+            this.lbOnTurn.TabIndex = 6;
+            this.lbOnTurn.Text = "Your turn";
+            // 
+            // pnGameStats
+            // 
+            this.pnGameStats.BackColor = System.Drawing.Color.Transparent;
+            this.pnGameStats.Controls.Add(this.pnPlayer1);
+            this.pnGameStats.Controls.Add(this.pnPlayer2);
+            this.pnGameStats.Controls.Add(this.lbOnTurn);
+            this.pnGameStats.Controls.Add(this.pbFinger);
+            this.pnGameStats.Location = new System.Drawing.Point(0, 346);
+            this.pnGameStats.Name = "pnGameStats";
+            this.pnGameStats.Size = new System.Drawing.Size(856, 212);
+            this.pnGameStats.TabIndex = 0;
+            this.pnGameStats.Paint += new System.Windows.Forms.PaintEventHandler(this.pnGameStats_Paint);
             // 
             // MultiplayerScene
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MemoryGame.Properties.Resources.mainmenu_wallpaper;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(806, 548);
-            this.ControlBox = false;
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pnStats);
-            this.Controls.Add(this.lbSingleplayerModeTitle);
+            this.ClientSize = new System.Drawing.Size(854, 551);
+            this.Controls.Add(this.pnGameStats);
+            this.Controls.Add(this.lbMultiplayerModeTitle);
             this.Controls.Add(this.pbBackArrow);
-            this.DoubleBuffered = true;
             this.Name = "MultiplayerScene";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.MultiplayerScene_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pbBackArrow)).EndInit();
-            this.pnStats.ResumeLayout(false);
-            this.pnStats.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnPlayer1.ResumeLayout(false);
+            this.pnPlayer1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer1Pairs)).EndInit();
+            this.pnPlayer2.ResumeLayout(false);
+            this.pnPlayer2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayer2Pairs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFinger)).EndInit();
+            this.pnGameStats.ResumeLayout(false);
+            this.pnGameStats.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,14 +227,17 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pbBackArrow;
-        private System.Windows.Forms.Label lbSingleplayerModeTitle;
-        private System.Windows.Forms.Panel pnStats;
-        private System.Windows.Forms.Label lbPairs;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbMultiplayerModeTitle;
+        private System.Windows.Forms.Panel pnPlayer1;
+        private System.Windows.Forms.Label lbPlayer1Pairs;
+        private System.Windows.Forms.PictureBox pbPlayer1Pairs;
+        private System.Windows.Forms.Label lbPlayer1Name;
+        private System.Windows.Forms.Panel pnPlayer2;
+        private System.Windows.Forms.Label lbPlayer2Name;
+        private System.Windows.Forms.Label lbPlayer2Pairs;
+        private System.Windows.Forms.PictureBox pbPlayer2Pairs;
+        private System.Windows.Forms.PictureBox pbFinger;
+        private System.Windows.Forms.Label lbOnTurn;
+        private System.Windows.Forms.Panel pnGameStats;
     }
 }

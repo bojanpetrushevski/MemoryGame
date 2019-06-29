@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace MemoryGame
 {
@@ -15,6 +16,7 @@ namespace MemoryGame
 
         public GameSettings Settings { set; get; }
         public CardsCreator Creator { set; get; }
+        public SoundPlayer SoundPlayer { set; get; }
         public Form1 Caller { set; get; }
         public Scene()
         {

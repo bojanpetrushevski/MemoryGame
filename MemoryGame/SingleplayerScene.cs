@@ -15,7 +15,6 @@ namespace MemoryGame
     public partial class SingleplayerScene : Scene
     {
         public SingleplayerGame Game { set; get; }
-        public System.Media.SoundPlayer SoundPlayer { set; get; }
         public EnterScore EnterScore { set; get; }
         public SingleplayerScene(GameSettings gameSettings, Form1 caller) : base(gameSettings, caller)
         {
@@ -31,6 +30,10 @@ namespace MemoryGame
             PictureBox[] frames = CreateImageFrames();
             Creator = new CardsCreator(Settings, frames);
             Game = new SingleplayerGame(Creator.CreateCards());
+            SetControls();
+        }
+        public void SetControls()
+        {
             this.Width = Settings.Width;
             this.Height = Settings.Height;
             pnStats.Location = new Point((this.Width - pnStats.Width) / 2, this.Height - pnStats.Height - 20);

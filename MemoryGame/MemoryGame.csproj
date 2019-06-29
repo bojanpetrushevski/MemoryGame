@@ -67,11 +67,23 @@
     </Compile>
     <Compile Include="DataReader.cs" />
     <Compile Include="DataWriter.cs" />
+    <Compile Include="EnterNames.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnterNames.Designer.cs">
+      <DependentUpon>EnterNames.cs</DependentUpon>
+    </Compile>
     <Compile Include="EnterScore.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EnterScore.Designer.cs">
       <DependentUpon>EnterScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorMessage.Designer.cs">
+      <DependentUpon>ErrorMessage.cs</DependentUpon>
     </Compile>
     <Compile Include="Exit.cs">
       <SubType>Form</SubType>
@@ -90,7 +102,6 @@
     <Compile Include="GameMode.cs" />
     <Compile Include="GameSettings.cs" />
     <Compile Include="MultiplayerGame.cs" />
-    <Compile Include="MultiplayerPlayer.cs" />
     <Compile Include="MultiplayerScene.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,8 +139,14 @@
     <EmbeddedResource Include="ChooseGameCategory.resx">
       <DependentUpon>ChooseGameCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EnterNames.resx">
+      <DependentUpon>EnterNames.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EnterScore.resx">
       <DependentUpon>EnterScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorMessage.resx">
+      <DependentUpon>ErrorMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Exit.resx">
       <DependentUpon>Exit.cs</DependentUpon>
@@ -231,6 +248,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="sounds\select_sound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\finger_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\finger_right.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

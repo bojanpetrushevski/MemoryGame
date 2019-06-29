@@ -161,11 +161,15 @@ namespace MemoryGame
             bool sound = GetSound();
             Color selectedColor = GetColor();
             GameSettings gameSettings = new GameSettings(selectedMode, selectedCateogry, sound, selectedColor);
-            if (selectedMode == GameMode.PlayingMode.SinglePlayer)
-                Scene = new SingleplayerScene(gameSettings, this);
-            if (selectedMode == GameMode.PlayingMode.MultiPlayer)
-                Scene = new Scene(gameSettings, this);
             this.Hide();
+            if (selectedMode == GameMode.PlayingMode.SinglePlayer)
+            {
+                Scene = new SingleplayerScene(gameSettings, this);
+            }
+            if (selectedMode == GameMode.PlayingMode.MultiPlayer)
+            {       
+                Scene = new MultiplayerScene(gameSettings, this);
+            }
             Scene.ShowDialog();
         }
         private GameMode.PlayingMode GetSelectedMode()
