@@ -82,62 +82,9 @@ namespace MemoryGame
         {
             foreach (PictureBox pb in Frames)
             {
-                pb.MouseClick += pb_MouseClick;
+                pb.MouseClick += pb_MouseDown;
                 pb.MouseEnter += pb_MouseEnter;
                 pb.MouseLeave += pb_MouseLeave;
-            }
-        }
-       /// <summary>
-       /// Handles all the action on user's mouse click on a single card. If the game is blocked (there are currently opened cards) it does nothing.
-       /// Tries to open card and if it is successfully opened, user can 
-       /// hear a sound (unless he/she has disabled sounds in game options).
-       /// Also if new pair is created, this method will play the appropriate sound, update the open cards, update the number of pairs
-       /// and will also check if game is over.
-       /// </summary>
-       /// <param name="sender"></param>
-       /// <param name="e"></param>
-        private void pb_MouseClick(object sender, EventArgs e)
-        {
-            if (Game.Blocked)
-                return;
-            if (Game.OpenCard((PictureBox)sender))
-                if (Settings.Sound)
-                    PlaySound(Resources.select_sound);
-            Pair pair = Game.CheckPair();
-            if (pair == null)
-                return;
-            if (pair.ValidPair)
-            {
-                if (Settings.Sound)
-                    PlaySound(Resources.correct_sound);
-                Game.Hit(pair.Card1, pair.Card2);
-                Game.UpdateOpenCards();
-                Game.UpdatePairs();
-                UpdateStats();
-                if (Game.IsGameOver())
-                {
-                    
-                    Player winner = GetWinner();
-                    string message = null;
-                    if (winner != null)
-                    {
-                        if (Settings.Sound)
-                            PlaySound(Resources.ta_da_sound);
-                        message = String.Format("{0} won the game.", winner.Name);
-                    }
-                    else
-                    {
-                        message = String.Format("It is draw.");
-                    }
-                    DeleteFingerImage();
-                    PlayAgain(message, winner);
-                }
-            }
-            else
-            {
-                Game.Miss(pair.Card1, pair.Card2);
-                ToggleFingerImage();
-                Game.ChangeTurn();
             }
         }
         public void DeleteFingerImage()
@@ -221,6 +168,65 @@ namespace MemoryGame
         private void pbBackArrow_MouseLeave(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Default;
+        }
+        /// <summary>
+        /// Handles all the action on user's mouse click on a single card. If the game is blocked (there are currently opened cards) it does nothing.
+        /// Tries to open card and if it is successfully opened, user can 
+        /// hear a sound (unless he/she has disabled sounds in game options).
+        /// Also if new pair is created, this method will play the appropriate sound, update the open cards, update the number of pairs
+        /// and will also check if game is over.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void pb_MouseDown(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Left)
+            {
+                if (Game.Blocked)
+                    return;
+                if (Game.OpenCard((PictureBox)sender))
+                    if (Settings.Sound)
+                        PlaySound(Resources.select_sound);
+                Pair pair = Game.CheckPair();
+                if (pair == null)
+                    return;
+                if (pair.ValidPair)
+                {
+                    if (Settings.Sound)
+                        PlaySound(Resources.correct_sound);
+                    Game.Hit(pair.Card1, pair.Card2);
+                    Game.UpdateOpenCards();
+                    Game.UpdatePairs();
+                    UpdateStats();
+                    if (Game.IsGameOver())
+                    {
+                        GameOver();
+                    }
+                }
+                else
+                {
+                    Game.Miss(pair.Card1, pair.Card2);
+                    ToggleFingerImage();
+                    Game.ChangeTurn();
+                }
+            }
+        }
+        public void GameOver()
+        {
+            Player winner = GetWinner();
+            string message = null;
+            if (winner != null)
+            {
+                if (Settings.Sound)
+                    PlaySound(Resources.ta_da_sound);
+                message = String.Format("{0} won the game.", winner.Name);
+            }
+            else
+            {
+                message = String.Format("It is draw.");
+            }
+            DeleteFingerImage();
+            PlayAgain(message, winner);
         }
     }
 }

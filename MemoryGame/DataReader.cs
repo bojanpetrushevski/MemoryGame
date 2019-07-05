@@ -33,7 +33,7 @@ namespace MemoryGame
             {
                 if (line.Length == 0)
                     continue;
-                string[] parts = line.Split(' ');
+                string[] parts = line.Split(',');
                 string name = parts[0];
                 string date = parts[1];
                 string time = parts[2];

@@ -36,7 +36,7 @@ namespace MemoryGame
         }
         public new string ToString()
         {
-            return String.Format("{0} {1} {2}", Player.Name, DateFormat(), FinishedTimeFormat());
+            return String.Format("{0},{1},{2}", Player.Name, DateFormat(), FinishedTimeFormat());
         }
         public int InMinutes()
         {
