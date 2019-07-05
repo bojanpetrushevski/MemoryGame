@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace MemoryGame
 {
+    /// <summary>
+    /// Represents a player that plays the game. 
+    /// If the game is singleplayer, this class is used for storing score. 
+    /// If the game is multiplayer, this class is used for keeping evidence of players names.
+    /// </summary>
     public class Player
     {
         public string Name { set; get; }

@@ -120,8 +120,10 @@
             this.Controls.Add(this.lbEnterYourNameTitle);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.KeyPreview = true;
             this.Name = "EnterScore";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EnterScore_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -12,11 +12,11 @@ namespace MemoryGame
 {
     public partial class EnterNames : Form
     {
-        public MultiplayerScene Caller { set; get; }
+        public MultiplayerScene Scene { set; get; }
         public EnterNames(MultiplayerScene caller)
         {
             InitializeComponent();
-            Caller = caller;
+            Scene = caller;
         }
 
         private void lbStart_Click(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace MemoryGame
             {
                 string player1Name = tbPlayer1Name.Text;
                 string player2Name = tbPlayer2Name.Text;
-                Caller.InitializeGame(player1Name, player2Name);
+                Scene.InitializeGame(player1Name, player2Name);
                 this.Dispose();
             }
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MemoryGame.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,10 +11,21 @@ using System.Windows.Forms;
 
 namespace MemoryGame
 {
+    /// <summary>
+    /// Play again form that appears when the game ends.
+    /// </summary>
     public partial class PlayAgain : Form
     {
         public Scene Scene { set; get; }
         public Form1 MainMenu { set; get; }
+        public PlayAgain(Scene scene, Form1 mainMenu, string message, Player winner)
+        {
+            InitializeComponent();
+            Scene = scene;
+            MainMenu = mainMenu;
+            SetStatus(message);
+            SetAwards(winner);
+        }
         public PlayAgain(Scene scene, Form1 mainMenu, string message)
         {
             InitializeComponent();
@@ -24,9 +36,20 @@ namespace MemoryGame
         public void SetStatus(string message)
         {
             lbStatusMessage.Text = message;
-            lbStatusMessage.Location = new Point((this.Width - lbStatusMessage.Width) / 2, 60);
+            lbStatusMessage.Location = new Point((this.Width - lbStatusMessage.Width) / 2, 30);
         }
-
+        public void SetAwards(Player winner)
+        {
+            if(winner != null)
+            {
+                pbTrophy.Image = Resources.trophy;
+            }
+            else
+            {
+                pbMedal1.Image = Resources.medal;
+                pbMedal2.Image = Resources.medal;
+            }
+        }
         private void lbPlayAgain_Click(object sender, EventArgs e)
         {
             if (Scene is SingleplayerScene singleplayerScene)

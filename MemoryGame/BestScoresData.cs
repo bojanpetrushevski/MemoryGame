@@ -8,6 +8,9 @@ using System.Windows.Forms;
 
 namespace MemoryGame
 {
+    /// <summary>
+    /// Represents class for storing data for scores.
+    /// </summary>
     public class BestScoresData
     {
         public static SortedSet<Score> Best4x4 { set; get; }

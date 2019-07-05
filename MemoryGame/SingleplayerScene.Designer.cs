@@ -38,6 +38,7 @@
             this.lbSingleplayerModeTitle = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.pbBackArrow = new System.Windows.Forms.PictureBox();
+            this.lbRestart = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -130,11 +131,27 @@
             this.pbBackArrow.MouseEnter += new System.EventHandler(this.pbBackArrow_MouseEnter);
             this.pbBackArrow.MouseLeave += new System.EventHandler(this.pbBackArrow_MouseLeave);
             // 
+            // lbRestart
+            // 
+            this.lbRestart.AutoSize = true;
+            this.lbRestart.BackColor = System.Drawing.Color.Transparent;
+            this.lbRestart.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.8F);
+            this.lbRestart.ForeColor = System.Drawing.Color.White;
+            this.lbRestart.Location = new System.Drawing.Point(631, 602);
+            this.lbRestart.Name = "lbRestart";
+            this.lbRestart.Size = new System.Drawing.Size(148, 46);
+            this.lbRestart.TabIndex = 5;
+            this.lbRestart.Text = "Restart";
+            this.lbRestart.Click += new System.EventHandler(this.lbRestart_Click);
+            this.lbRestart.MouseEnter += new System.EventHandler(this.lbRestart_MouseEnter);
+            this.lbRestart.MouseLeave += new System.EventHandler(this.lbRestart_MouseLeave);
+            // 
             // SingleplayerScene
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 764);
+            this.Controls.Add(this.lbRestart);
             this.Controls.Add(this.pbBackArrow);
             this.Controls.Add(this.lbSingleplayerModeTitle);
             this.Controls.Add(this.pnStats);
@@ -161,5 +178,6 @@
         private System.Windows.Forms.Label lbSingleplayerModeTitle;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.PictureBox pbBackArrow;
+        private System.Windows.Forms.Label lbRestart;
     }
 }

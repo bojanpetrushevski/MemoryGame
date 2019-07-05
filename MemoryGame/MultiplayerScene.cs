@@ -12,6 +12,10 @@ using System.Windows.Forms;
 
 namespace MemoryGame
 {
+    /// <summary>
+    /// Multiplayer scene form. When users play multiplayer mode, this form is on the screen. It extends from Scene form.
+    /// </summary>
+
     public partial class MultiplayerScene : Scene
     {
         public MultiplayerGame Game { set; get; }
@@ -83,6 +87,15 @@ namespace MemoryGame
                 pb.MouseLeave += pb_MouseLeave;
             }
         }
+       /// <summary>
+       /// Handles all the action on user's mouse click on a single card. If the game is blocked (there are currently opened cards) it does nothing.
+       /// Tries to open card and if it is successfully opened, user can 
+       /// hear a sound (unless he/she has disabled sounds in game options).
+       /// Also if new pair is created, this method will play the appropriate sound, update the open cards, update the number of pairs
+       /// and will also check if game is over.
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private void pb_MouseClick(object sender, EventArgs e)
         {
             if (Game.Blocked)
@@ -103,10 +116,13 @@ namespace MemoryGame
                 UpdateStats();
                 if (Game.IsGameOver())
                 {
+                    
                     Player winner = GetWinner();
                     string message = null;
                     if (winner != null)
                     {
+                        if (Settings.Sound)
+                            PlaySound(Resources.ta_da_sound);
                         message = String.Format("{0} won the game.", winner.Name);
                     }
                     else
@@ -114,7 +130,7 @@ namespace MemoryGame
                         message = String.Format("It is draw.");
                     }
                     DeleteFingerImage();
-                    PlayAgain(message);
+                    PlayAgain(message, winner);
                 }
             }
             else
@@ -137,9 +153,9 @@ namespace MemoryGame
             else
                 return null;
         }
-        public void PlayAgain(string message)
+        public void PlayAgain(string message, Player winner)
         {
-            PlayAgain playAgain = new PlayAgain(this, Caller, message);
+            PlayAgain playAgain = new PlayAgain(this, MainMenu, message, winner);
             playAgain.ShowDialog();
         }
         public void ToggleFingerImage()
@@ -193,7 +209,7 @@ namespace MemoryGame
         }
         private void pbBackArrow_Click(object sender, EventArgs e)
         {
-            BackToMainMenu backToMainMenu = new BackToMainMenu(this, Caller);
+            BackToMainMenu backToMainMenu = new BackToMainMenu(this, MainMenu);
             backToMainMenu.ShowDialog();
         }
 

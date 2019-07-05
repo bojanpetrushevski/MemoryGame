@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MemoryGame
 {
+    /// <summary>
+    /// Class that represents a game category (4x4, 4x5 or 4x6).
+    /// </summary>
     public class GameCategory
     {
         public int NumberOfCards { set; get; }

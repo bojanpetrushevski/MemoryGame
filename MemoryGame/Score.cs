@@ -7,6 +7,9 @@ using System.Windows.Forms;
 
 namespace MemoryGame
 {
+    /// <summary>
+    /// Class used for tracking score when user plays singleplayer mode.
+    /// </summary>
     public class Score : IComparable<Score>
     {
         public Player Player { set; get; }

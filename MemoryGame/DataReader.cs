@@ -8,6 +8,9 @@ using System.Windows.Forms;
 
 namespace MemoryGame
 {
+    /// <summary>
+    /// Class used for reading data from files.
+    /// </summary>
     public class DataReader
     {
         public void ReadFromFile()
@@ -17,6 +20,12 @@ namespace MemoryGame
             dataReader.ReadData(@"..\..\scores\best4x5.txt", BestScoresData.Best4x5);
             dataReader.ReadData(@"..\..\scores\best4x6.txt", BestScoresData.Best4x6);
         }
+        /// <summary>
+        /// Reads the scores from the file path. In the file are written all the scores.
+        /// </summary>
+        /// <param name="path">The file relative path.</param>
+        /// <param name="scores">The SortedSet where the data will be stored.</param>
+        /// <returns></returns>
         public SortedSet<Score> ReadData(string path, SortedSet<Score> scores)
         {
             scores.Clear();

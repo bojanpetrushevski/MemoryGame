@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="BackToMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,12 +90,6 @@
     </Compile>
     <Compile Include="EnterScore.Designer.cs">
       <DependentUpon>EnterScore.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ErrorMessage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ErrorMessage.Designer.cs">
-      <DependentUpon>ErrorMessage.cs</DependentUpon>
     </Compile>
     <Compile Include="Exit.cs">
       <SubType>Form</SubType>
@@ -145,6 +145,9 @@
     <Compile Include="SingleplayerScene.Designer.cs">
       <DependentUpon>SingleplayerScene.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BackToMainMenu.resx">
       <DependentUpon>BackToMainMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,9 +162,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EnterScore.resx">
       <DependentUpon>EnterScore.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ErrorMessage.resx">
-      <DependentUpon>ErrorMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Exit.resx">
       <DependentUpon>Exit.cs</DependentUpon>
@@ -212,9 +212,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\cat.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="images\dog.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="images\guitar.png" />
@@ -272,6 +269,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\finger_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\finger_right2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\finger_left2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sounds\ta_da_sound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\trophy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\medal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\glasses.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,11 +12,11 @@ namespace MemoryGame
 {
     public partial class Exit : Form
     {
-        public Form Caller { set; get; }
-        public Exit(Form caller)
+        public Form MainMenu { set; get; }
+        public Exit(Form mainMenu)
         {
             InitializeComponent();
-            Caller = caller;
+            MainMenu = mainMenu;
         }
 
         private void lbYes_MouseEnter(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace MemoryGame
             DataWriter writer = new DataWriter();
             writer.WriteToFile();
             this.Dispose();
-            Caller.Dispose();
+            MainMenu.Dispose();
             Application.Exit();
         }
 

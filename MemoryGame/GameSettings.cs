@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace MemoryGame
 {
+    /// <summary>
+    /// Class that has all the game settings selected by thr user.
+    /// </summary>
     public class GameSettings
     {
         public int Width { set; get; }
@@ -27,17 +30,19 @@ namespace MemoryGame
             CalculateWidth();
             CalculateHeight();
         }
+        /// <summary>
+        /// Calculates game screen width.
+        /// </summary>
         public void CalculateWidth()
         {
             Width = (SelectedCategory.Columns * SelectedCategory.CardWidth) + ((SelectedCategory.Columns - 1) * CardDistance) + (2 * HorizontalOffset);
         }
+        /// <summary>
+        /// Calculates game screen height.
+        /// </summary>
         public void CalculateHeight()
         {
             Height = (SelectedCategory.Rows * SelectedCategory.CardHeight) + ((SelectedCategory.Rows - 1) * CardDistance) + (VerticalOffset + VerticalOffset / 2);
-        }
-        public new string ToString()
-        {
-            return String.Format("GameMode: {0}\nGameCategory:{1}\nSound: {2}\nCardColor: {3}", GameMode, SelectedCategory, Sound, CardColor);
         }
     }
 }

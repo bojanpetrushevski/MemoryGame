@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MemoryGame
 {
+    /// <summary>
+    /// Represents two cards together. If they have the same image, this pair is valid.
+    /// </summary>
     public class Pair
     {
         public Card Card1 { set; get; }

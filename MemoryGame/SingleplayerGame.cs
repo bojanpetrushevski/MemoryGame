@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MemoryGame
 {
+    /// <summary>
+    /// Class that represents a multiplayer game logic. Extends from Game class.
+    /// </summary>
     public class SingleplayerGame : Game
     {
         public Player Player { set; get; }

@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace MemoryGame
 {
-    public partial class ErrorMessage : Form
+    public partial class About : Form
     {
-        public ErrorMessage()
+        public About()
         {
             InitializeComponent();
-        }
-
-        private void ErrorMessage_Load(object sender, EventArgs e)
-        {
-            timer1.Start();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            this.Dispose();
         }
     }
 }

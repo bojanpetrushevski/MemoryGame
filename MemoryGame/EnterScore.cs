@@ -39,6 +39,10 @@ namespace MemoryGame
         }
         private void lbOK_Click(object sender, EventArgs e)
         {
+            Continue();
+        }
+        public void Continue()
+        {
             string name = tbName.Text;
             int time = ParseTime(tbTime.Text);
             Score s = new Score(new Player(name, 0, 0), time);
@@ -67,6 +71,14 @@ namespace MemoryGame
         {
             lbOK.ForeColor = Color.White;
             this.Cursor = Cursors.Default;
+        }
+
+        private void EnterScore_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                Continue();
+            }
         }
     }
 }

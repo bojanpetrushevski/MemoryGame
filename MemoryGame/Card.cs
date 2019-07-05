@@ -56,11 +56,17 @@ namespace MemoryGame
             }
             return false;
         }
+        /// <summary>
+        /// Setting the Paired property to true and changing the background of card because it is paired.
+        /// </summary>
         public void MarkPaired()
         {
             Paired = true;
             ImageFrame.BackColor = Color.FromArgb(91, 155, 142);
         }
+        /// <summary>
+        /// If the card wasn't open, it will set its color to opened card color, otherwise it will set its color to the closed card color.
+        /// </summary>
         public void ChangeColor()
         {
             if (!Paired)

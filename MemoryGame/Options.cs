@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace MemoryGame
 {
+    /// <summary>
+    /// The game options that user can interact with.
+    /// </summary>
     public partial class Options : Form
     {
         public Form1 MainMenu { set; get; }
@@ -32,7 +35,7 @@ namespace MemoryGame
         {
             List<string> DropDownList = new List<string>();
             DropDownList.Add("White");
-            DropDownList.Add("Blue");
+            DropDownList.Add("PeachPuff");
             comboBox1.DataSource = DropDownList;
         }
         private void btnOnOff_Click(object sender, EventArgs e)

@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace MemoryGame
 {
+    /// <summary>
+    /// Class used for locating the cards on the screen and distributing images of cards.
+    /// </summary>
     public class CardsCreator
     {
         public GameSettings Settings { set; get; }
@@ -21,6 +24,10 @@ namespace MemoryGame
             ImageFrames = imageFrames;
             Images = GetImages();
         }
+        /// <summary>
+        /// This method sets the settings for every card and generates random image for it. After images are selected, they are put in the array in reverse order with swapping for appropriate element.
+        /// </summary>
+        /// <returns>Returns list of completely cards.</returns>
         public List<Card> CreateCards()
         {
             List<Card> cards = new List<Card>();
@@ -34,6 +41,10 @@ namespace MemoryGame
             }
             return cards;
         }
+        /// <summary>
+        /// Gets subarray of images depending on number of cards.
+        /// </summary>
+        /// <returns>Array of images</returns>
         public Bitmap[] GetImages()
         {
             Bitmap[] images = new Bitmap[Settings.SelectedCategory.NumberOfCards];
@@ -43,6 +54,11 @@ namespace MemoryGame
             }
             return images;
         }
+        /// <summary>
+        /// Sets image settings.
+        /// </summary>
+        /// <param name="ImageFrame">The picture box for the card.</param>
+        /// <param name="position">Card's position in the list of cards.</param>
         public void SetImageFrame(PictureBox ImageFrame, int position)
         {
             int column = position % Settings.SelectedCategory.Columns;
@@ -54,6 +70,11 @@ namespace MemoryGame
             ImageFrame.SizeMode = PictureBoxSizeMode.CenterImage;
             ImageFrame.BackColor = Settings.CardColor;
         }
+        /// <summary>
+        /// Swaps two images.
+        /// </summary>
+        /// <param name="position">The index of the generated image.</param>
+        /// <param name="offset">The number of generated images so far.</param>
         public void Swap(int position, int offset)
         {
             Bitmap temp = Images[position];

@@ -13,6 +13,9 @@ using System.Media;
 
 namespace MemoryGame
 {
+    /// <summary>
+    /// Multiplayer scene form. When users play multiplayer mode, this form is on the screen. It extends from Scene form.
+    /// </summary>
     public partial class SingleplayerScene : Scene
     {
         public SingleplayerGame Game { set; get; }
@@ -50,6 +53,7 @@ namespace MemoryGame
             this.Width = Settings.Width;
             this.Height = Settings.Height;
             pnStats.Location = new Point((this.Width - pnStats.Width) / 2, this.Height - pnStats.Height - 20);
+            lbRestart.Location = new Point(pnStats.Location.X + pnStats.Width + 20, this.Height - pnStats.Height + 15);
             lbSingleplayerModeTitle.Location = new Point((this.Width - lbSingleplayerModeTitle.Width) / 2, 20);
         }
         public PictureBox[] CreateImageFrames()
@@ -72,6 +76,15 @@ namespace MemoryGame
                 pb.MouseLeave += pb_MouseLeave;
             }      
         }
+        /// <summary>
+        /// Handles all the action on user's mouse click on a single card. If the game is blocked (there are currently opened cards) it does nothing.
+        /// Tries to open card and if it is successfully opened, user can 
+        /// hear a sound (unless he/she has disabled sounds in game options).
+        /// Also if new pair is created, this method will play the appropriate sound, update the open cards, update the number of pairs
+        /// and will also check if game is over.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pb_MouseClick(object sender, EventArgs e)
         {
             if (Game.Blocked)
@@ -123,7 +136,7 @@ namespace MemoryGame
             {
                 EnterScore = new EnterScore(scores, Game.Player.ElapsedTime);
                 EnterScore.ShowDialog();
-                message = "Congarts, your score has been recorded in best scores";
+                message = "Congrats, your score has been recorded in best scores";
             }
             else
             {
@@ -133,7 +146,7 @@ namespace MemoryGame
         }
         public void PlayAgain(string message)
         {
-            PlayAgain playAgain = new PlayAgain(this, Caller, message);
+            PlayAgain playAgain = new PlayAgain(this, MainMenu, message);
             playAgain.ShowDialog();
         }
         public void PlaySound(UnmanagedMemoryStream sound)
@@ -185,7 +198,7 @@ namespace MemoryGame
         private void pbBackArrow_Click(object sender, EventArgs e)
         {
             StopTimer();
-            BackToMainMenu backToMainMenu = new BackToMainMenu(this, Caller);
+            BackToMainMenu backToMainMenu = new BackToMainMenu(this, MainMenu);
             backToMainMenu.ShowDialog();
         }
 
@@ -197,6 +210,23 @@ namespace MemoryGame
         private void pbBackArrow_MouseLeave(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Default;
+        }
+
+        private void lbRestart_MouseEnter(object sender, EventArgs e)
+        {
+            lbRestart.ForeColor = Color.Yellow;
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void lbRestart_MouseLeave(object sender, EventArgs e)
+        {
+            lbRestart.ForeColor = Color.White;
+            this.Cursor = Cursors.Default;
+        }
+
+        private void lbRestart_Click(object sender, EventArgs e)
+        {
+            InitializeGame();
         }
     }
 }

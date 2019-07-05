@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace MemoryGame
 {
+    /// <summary>
+    /// Class used for writing data in files.
+    /// </summary>
     public class DataWriter
     {
         public void WriteToFile()
@@ -15,6 +18,11 @@ namespace MemoryGame
             WriteData(@"..\..\scores\best4x5.txt", BestScoresData.Best4x5);
             WriteData(@"..\..\scores\best4x6.txt", BestScoresData.Best4x6);
         }
+        /// <summary>
+        /// Removes all the data from the file path and writes the new scores from the SortedSet.
+        /// </summary>
+        /// <param name="path">The file relative path.</param>
+        /// <param name="scores">The SortedSet where the data is stored.</param>
         public void WriteData(string path, SortedSet<Score> scores)
         {
             File.WriteAllText(path, string.Empty);

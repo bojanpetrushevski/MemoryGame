@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MemoryGame
 {
+    /// <summary>
+    /// Class used for storing game mode enum.
+    /// </summary>
     public class GameMode
     {
         public enum PlayingMode { SinglePlayer = 0, MultiPlayer}

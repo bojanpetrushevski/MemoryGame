@@ -168,9 +168,9 @@
             // pbFinger
             // 
             this.pbFinger.BackColor = System.Drawing.Color.Transparent;
-            this.pbFinger.Location = new System.Drawing.Point(363, 90);
+            this.pbFinger.Location = new System.Drawing.Point(349, 86);
             this.pbFinger.Name = "pbFinger";
-            this.pbFinger.Size = new System.Drawing.Size(140, 99);
+            this.pbFinger.Size = new System.Drawing.Size(175, 99);
             this.pbFinger.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbFinger.TabIndex = 9;
             this.pbFinger.TabStop = false;
@@ -197,7 +197,7 @@
             this.pnGameStats.Location = new System.Drawing.Point(0, 346);
             this.pnGameStats.Name = "pnGameStats";
             this.pnGameStats.Size = new System.Drawing.Size(856, 212);
-            this.pnGameStats.TabIndex = 0;           
+            this.pnGameStats.TabIndex = 0;
             // 
             // MultiplayerScene
             // 

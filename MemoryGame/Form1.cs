@@ -15,7 +15,7 @@ namespace MemoryGame
     {
         public Scene Scene { set; get; }
         public Options Options { set; get; }
-        public ChooseGameCategory CategoryStats { set; get; }
+        public ChooseGameCategory CategoryChooser { set; get; }
         public Form1()
         {
             InitializeComponent();
@@ -156,6 +156,15 @@ namespace MemoryGame
 
         private void lbPlay_Click(object sender, EventArgs e)
         {
+            StartGame();
+        }
+        /// <summary>
+        /// Starts the game with the selected settings (game mode, game cateogry, sound and card color) by the user.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void StartGame()
+        {
             GameMode.PlayingMode selectedMode = GetSelectedMode();
             GameCategory selectedCateogry = GetSelectedCategory();
             bool sound = GetSound();
@@ -167,7 +176,7 @@ namespace MemoryGame
                 Scene = new SingleplayerScene(gameSettings, this);
             }
             if (selectedMode == GameMode.PlayingMode.MultiPlayer)
-            {       
+            {
                 Scene = new MultiplayerScene(gameSettings, this);
             }
             Scene.ShowDialog();
@@ -197,26 +206,45 @@ namespace MemoryGame
         }
         private Color GetColor()
         {
-            if (Options.DropDownSelectedItem == "Blue")
-                return Color.Blue;
-            else
+            if (Options.DropDownSelectedItem == "White")
                 return Color.White;
+            else
+                return Color.PeachPuff;
         }
 
         private void lbBestScores_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CategoryStats = new ChooseGameCategory(this);
-            CategoryStats.ShowDialog();
+            CategoryChooser = new ChooseGameCategory(this);
+            CategoryChooser.ShowDialog();
         }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             BestScoresData data = new BestScoresData();
-            DataReader reader = new DataReader();
-            reader.ReadFromFile();
+            ReadData();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            WriteData();
+        }
+        /// <summary>
+        /// Read all the scores when the game is started.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public static void ReadData()
+        {
+            DataReader reader = new DataReader();
+            reader.ReadFromFile();
+        }
+        /// <summary>
+        /// Write all the scores when the game is closed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public static void WriteData()
         {
             DataWriter writer = new DataWriter();
             writer.WriteToFile();
