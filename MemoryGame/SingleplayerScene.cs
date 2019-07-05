@@ -71,48 +71,10 @@ namespace MemoryGame
         {
             foreach (PictureBox pb in Frames)
             {
-                pb.MouseClick += pb_MouseClick;
+                pb.MouseClick += pb_MouseDown;
                 pb.MouseEnter += pb_MouseEnter;
                 pb.MouseLeave += pb_MouseLeave;
             }      
-        }
-        /// <summary>
-        /// Handles all the action on user's mouse click on a single card. If the game is blocked (there are currently opened cards) it does nothing.
-        /// Tries to open card and if it is successfully opened, user can 
-        /// hear a sound (unless he/she has disabled sounds in game options).
-        /// Also if new pair is created, this method will play the appropriate sound, update the open cards, update the number of pairs
-        /// and will also check if game is over.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void pb_MouseClick(object sender, EventArgs e)
-        {
-            if (Game.Blocked)
-                return;
-            if(Game.OpenCard((PictureBox)sender))
-                if (Settings.Sound)
-                    PlaySound(Resources.select_sound);
-            Pair pair = Game.CheckPair();
-            if (pair == null)
-                return;
-            if (pair.ValidPair)
-            {
-                if(Settings.Sound)
-                    PlaySound(Resources.correct_sound);
-                Game.Hit(pair.Card1, pair.Card2);
-                Game.UpdateOpenCards();
-                Game.UpdatePairs();
-                UpdateStats();
-                if (Game.IsGameOver())
-                {
-                    StopTimer();
-                    CheckScore();
-                }
-            }
-            else
-            {
-                Game.Miss(pair.Card1, pair.Card2);
-            }
         }
         public void StartTimer()
         {
@@ -227,6 +189,47 @@ namespace MemoryGame
         private void lbRestart_Click(object sender, EventArgs e)
         {
             InitializeGame();
+        }
+        /// <summary>
+        /// Handles all the action on user's mouse click on a single card. If the game is blocked (there are currently opened cards) it does nothing.
+        /// Tries to open card and if it is successfully opened, user can 
+        /// hear a sound (unless he/she has disabled sounds in game options).
+        /// Also if new pair is created, this method will play the appropriate sound, update the open cards, update the number of pairs
+        /// and will also check if game is over.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void pb_MouseDown(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Left)
+            {
+                if (Game.Blocked)
+                    return;
+                if (Game.OpenCard((PictureBox)sender))
+                    if (Settings.Sound)
+                        PlaySound(Resources.select_sound);
+                Pair pair = Game.CheckPair();
+                if (pair == null)
+                    return;
+                if (pair.ValidPair)
+                {
+                    if (Settings.Sound)
+                        PlaySound(Resources.correct_sound);
+                    Game.Hit(pair.Card1, pair.Card2);
+                    Game.UpdateOpenCards();
+                    Game.UpdatePairs();
+                    UpdateStats();
+                    if (Game.IsGameOver())
+                    {
+                        StopTimer();
+                        CheckScore();
+                    }
+                }
+                else
+                {
+                    Game.Miss(pair.Card1, pair.Card2);
+                }
+            }
         }
     }
 }
