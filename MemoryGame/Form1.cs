@@ -249,5 +249,12 @@ namespace MemoryGame
             DataWriter writer = new DataWriter();
             writer.WriteToFile();
         }
+
+        private void lbAbout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            About about = new About(this);
+            about.ShowDialog();
+        }
     }
 }

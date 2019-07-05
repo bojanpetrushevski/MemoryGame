@@ -12,9 +12,27 @@ namespace MemoryGame
 {
     public partial class About : Form
     {
-        public About()
+        public Form1 MainMenu { set; get; }
+        public About(Form1 mainMenu)
         {
             InitializeComponent();
+            MainMenu = mainMenu;
+        }
+
+        private void pbBackArrow_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            MainMenu.Show();
+        }
+
+        private void pbBackArrow_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void pbBackArrow_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
         }
     }
 }

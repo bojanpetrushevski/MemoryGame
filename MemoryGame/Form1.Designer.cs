@@ -198,6 +198,7 @@ namespace MemoryGame
             this.lbAbout.Size = new System.Drawing.Size(102, 37);
             this.lbAbout.TabIndex = 10;
             this.lbAbout.Text = "About";
+            this.lbAbout.Click += new System.EventHandler(this.lbAbout_Click);
             this.lbAbout.MouseEnter += new System.EventHandler(this.lbAbout_MouseEnter);
             this.lbAbout.MouseLeave += new System.EventHandler(this.lbAbout_MouseLeave);
             // 
